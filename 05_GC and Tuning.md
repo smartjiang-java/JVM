@@ -23,13 +23,20 @@
 
 #### 2.如何定位垃圾
 
-1. 引用计数（ReferenceCount）
+1. 引用计数（ReferenceCount） 为0时进行回收
+    缺点：不能解决循环引用的问题（ABC互相引用，但这个整体却没有引用指向，合起来一堆垃圾，却无法回收）
 2. 根可达算法(RootSearching)
-
+      --什么是跟对象(GC roots)？
+    JVM stack(main方法栈帧里new的对象) 
+    Native Method stack(main方法里用到的本地方法栈)
+    Runtime constant pool(把class加载进去的运行时常量池)
+    Static references in method area (方法区内的静态引用)
+    Clazz:加载进去的类对象
+    
 #### 3.常见的垃圾回收算法
 
 1. 标记清除(mark sweep) - 位置不连续 产生碎片 效率偏低（两遍扫描）
-2. 拷贝算法 (copying) - 没有碎片，浪费空间
+2. 拷贝算法 (copying) - 没有碎片，浪费空间,只能用一半
 3. 标记压缩(mark compact) - 没有碎片，效率偏低（两遍扫描，指针需要调整）
 
 #### 4.JVM内存分代模型（用于分代垃圾回收算法）
@@ -146,8 +153,6 @@
 
   java -X
 
-  
-
   试验用程序：
 
   ```java
@@ -165,8 +170,6 @@
     }
   }
   ```
-
-  
 
   1. 区分概念：内存泄漏memory leak，内存溢出out of memory
   2. java -XX:+PrintCommandLineFlags HelloGC
@@ -506,8 +509,6 @@ jhat -J-mx512M xxx.dump
 > 6585 -> 2770：整个堆的情况
 >
 > （19840）：整个堆大小
-
-
 
 ```java
 [GC (CMS Initial Mark) [1 CMS-initial-mark: 8511K(13696K)] 9866K(19840K), 0.0040321 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
