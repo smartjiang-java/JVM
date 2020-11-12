@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
+//自定义类加载器并加密
 public class T007_MSBClassLoaderWithEncription extends ClassLoader {
 
     public static int seed = 0B10110110;

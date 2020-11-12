@@ -10,6 +10,7 @@ public class T002_ClassLoaderLevel {
         System.out.println(sun.net.spi.nameservice.dns.DNSNameService.class.getClassLoader().getClass().getClassLoader());
         System.out.println(T002_ClassLoaderLevel.class.getClassLoader().getClass().getClassLoader());
 
+        //取得默认的父类加载器
         System.out.println(new T006_MSBClassLoader().getParent());
         System.out.println(ClassLoader.getSystemClassLoader());
     }

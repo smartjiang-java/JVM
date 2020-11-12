@@ -1,5 +1,6 @@
 package com.mashibing.jvm.c2_classloader;
 
+//初始化的几种情况
 public class T008_LazyLoading { //严格讲应该叫lazy initialzing，因为java虚拟机规范并没有严格规定什么时候必须loading,但严格规定了什么时候initialzing
     public static void main(String[] args) throws Exception {
         //P p;

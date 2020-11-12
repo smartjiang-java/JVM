@@ -1,5 +1,6 @@
 package com.mashibing.jvm.c2_classloader;
 
+//类的热部署:这个不能实现
 public class T011_ClassReloading1 {
     public static void main(String[] args) throws Exception {
         T006_MSBClassLoader msbClassLoader = new T006_MSBClassLoader();

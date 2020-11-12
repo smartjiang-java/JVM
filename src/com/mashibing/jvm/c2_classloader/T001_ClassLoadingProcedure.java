@@ -1,5 +1,6 @@
 package com.mashibing.jvm.c2_classloader;
 
+//类的初始化:准备阶段赋初值,初始化阶段赋默认值
 public class T001_ClassLoadingProcedure {
     public static void main(String[] args) {
         System.out.println(T.count);

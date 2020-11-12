@@ -1,6 +1,6 @@
 ## 3：类加载-初始化
 一个class被加载到内存中,有两块内容:一块用来保存class的二进制文件,
-一块是class类对象(Method Area或者堆内存),指向哪些二进制内容,通过访问class对象去访问二进制文件
+一块是class类对象(堆内存中),通过访问方法区的家口指向哪些二进制内容,通过访问class对象去访问二进制文件
  
 1:Loading
 2:Linking
@@ -22,6 +22,21 @@
      会从顶级加载器依次向下委托进行加载.如果加载不成功,会抛出ClassNotFound异常.
        1. 双亲委派，主要出于安全来考虑,防止核心类被覆盖,次要是防止重复加载,防止资源浪费
        2.子加载器与父加载器不是继承关系,而是有一个成员变量是上一级加载器      
+       问题：parent是如何指定的？
+       答：在自定义classLoader时会调用父亲默认的classLoader()方法，源码中是通过 ClassLoader.getSystemClassLoader() 
+          获取默认的classLoader当做parent（在没有手动指定的情况下）。
+       
+       问题：如何打破双亲委派？
+       答：重写loadClass()，而不是重写findClass()，因为loadClass()方法写好了双亲委派的过程。
+       问题:何时打破?
+       1:jdk1.2之前,自定义的ClassLoader都必须重写LoaderClass
+       2:在线程里面设定线程的上下文的ClassLoader,去加载各种的class
+       3:热启动,热部署:
+       tomcat中每一个webApplication中都有不同的classLoader，因为不同上下文中可能加载了同名的类的不同版本。
+       jsp等位什么能热加载，因为重写了loadClass()，打破了双亲委派，每次给了需要加载的类名就把已有的自定义classLoader整个干掉，
+       重新new 一个classLoader然后加载，这样每次加载的就不一样了，若补充协议loadClass()打破双亲委派，则第二次加载会找加载过的内容直接返回。
+       load的类都放在metaspace方法区里，原来load的老的类，如果没有指向他的引用就会被GC回收。
+       
    1.2: LazyLoading,JVM规范并没有规定何时加载 但是规定了必须初始化的五种情况
          1. –new getstatic putstatic invokestatic指令，访问final变量除外
             –java.lang.reflect对类进行反射调用时
@@ -52,20 +67,22 @@
          默认是混合模式-Xmixed,混合使用解释器+热点代码编译 ,开始解释执行,启动速度较快,对热点代码实现检测和编译 
          起始阶段采用解释执行-Xint,启动很快,解释很慢        
          -Xcomp 使用纯编译模式,执行很快,启动很慢 
-         热点代码检测:
+         热点代码检测:-XX:CompileThreshold = 10000
          多次被调用的方法(方法计数器:检测方法执行频率)
          多次被调用的循环(循环计数器:检测循环执行频率)
          进行编译
-         1. 检测热点代码：-XX:CompileThreshold = 10000
       
 2. Linking 
       1. Verification 校验
          1. 验证文件是否符合JVM规定,魔术值校验等等
       2. Preparation  准备
-         1. 静态成员变量赋默认值
+         1. 静态成员变量赋默认值 
+         2.final修饰的直接赋初值
       3. Resolution    
          1. 将类、方法、属性等符号引用解析为直接引用,内存地址,直接能访问的
             常量池中的各种符号引用解析为指针、偏移量等内存地址的直接引用
+            （符号引用：常量池中有一个类的名字，实际上这个类可能是在内存中的另一个片区域，被这个名字指向，
+            当使用的时候我们写的字符指向这个名字，这个名字指向那一片真正的区域）。解析就是让写的字符直接指向那一片类真正存在的内存空间。
       
 3. Initializing    初始化
       1. 调用类初始化代码 <clinit>，给静态成员变量赋初始值
