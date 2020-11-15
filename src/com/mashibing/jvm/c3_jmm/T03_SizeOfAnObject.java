@@ -22,7 +22,7 @@ public class T03_SizeOfAnObject {
         byte b1;        //1
         byte b2;        //1
 
-        Object o;       //4
+        Object o;       //4,引用数据类型
         byte b3;        //1
 
     }

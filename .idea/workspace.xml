@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96329429-90d8-4757-a4a3-7fdc61dce21a" name="Default Changelist" comment="add">
+    <list default="true" id="96329429-90d8-4757-a4a3-7fdc61dce21a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tmp/image/java8大原子操作(已弃用).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/image/对象的创建过程.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/image/重排序必须遵守的原则.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_ClassLodingLinkingInitializing.md" beforeDir="false" afterPath="$PROJECT_DIR$/02_ClassLodingLinkingInitializing.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03_01_JMM.md" beforeDir="false" afterPath="$PROJECT_DIR$/03_01_JMM.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T008_LazyLoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T008_LazyLoading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T010_Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T010_Parent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_02_JavaAgent_AboutObject.md" beforeDir="false" afterPath="$PROJECT_DIR$/03_02_JavaAgent_AboutObject.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_JavaRuntimeDataArea_InstructionSet.md" beforeDir="false" afterPath="$PROJECT_DIR$/04_JavaRuntimeDataArea_InstructionSet.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$P.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$P.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$X.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$X.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent$MyLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent$MyLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestSync.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestSync.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T04_Disorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T04_Disorder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestSync.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +61,9 @@
     <setting file="file://$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T010_Parent.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1fDKwYNp5kcZLqx6t3ACXGaB2kK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -61,14 +79,17 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/tmp/image" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\java资源全套\program\idea program\JVM\tmp\image" />
+      <recent name="C:\work\ijprojects\JVM" />
+      <recent name="C:\work\ijprojects\JVM\src\com\mashibing\jvm\cms" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.mashibing.jvm.c4_RuntimeDataAreaAndInstructionSet" />
@@ -77,10 +98,8 @@
       <recent name="com.mashibing.jvm.bytecode" />
       <recent name="com.mashibing.jvm.gc" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\java资源全套\program\idea program\JVM\tmp\image" />
-      <recent name="C:\work\ijprojects\JVM" />
-      <recent name="C:\work\ijprojects\JVM\src\com\mashibing\jvm\cms" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -89,21 +108,7 @@
       <select />
     </treeState>
   </component>
-  <component name="RunManager" selected="Application.T001_ClassLoadingProcedure">
-    <configuration name="LambdaGC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c5_gc.LambdaGC" />
-      <module name="JVM" />
-      <option name="VM_PARAMETERS" value="-XX:MaxMetaspaceSize=9M -XX:+PrintGCDetails" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mashibing.jvm.c5_gc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.TestSync">
     <configuration name="StackOverFlow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.StackOverFlow" />
       <module name="JVM" />
@@ -170,6 +175,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestSync" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c3_jmm.TestSync" />
+      <module name="JVM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mashibing.jvm.c3_jmm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -183,19 +201,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.T03_SizeOfAnObject" />
-      <item itemvalue="Application.LambdaGC" />
       <item itemvalue="Application.StackOverFlow" />
       <item itemvalue="Application.T04_Disorder" />
       <item itemvalue="Application.T002_ClassLoaderLevel" />
       <item itemvalue="Application.T001_ClassLoadingProcedure" />
+      <item itemvalue="Application.TestSync" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestSync" />
         <item itemvalue="Application.T001_ClassLoadingProcedure" />
         <item itemvalue="Application.T002_ClassLoaderLevel" />
         <item itemvalue="Application.T04_Disorder" />
         <item itemvalue="Application.StackOverFlow" />
-        <item itemvalue="Application.LambdaGC" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +240,9 @@
       <workItem from="1605013959685" duration="5372000" />
       <workItem from="1605099814537" duration="8983000" />
       <workItem from="1605185332408" duration="113000" />
-      <workItem from="1605191235916" duration="6298000" />
+      <workItem from="1605191235916" duration="6353000" />
+      <workItem from="1605343586820" duration="6532000" />
+      <workItem from="1605424463308" duration="9180000" />
     </task>
     <task id="LOCAL-00001" summary="更新markdown资料与图片">
       <created>1572139204079</created>
@@ -294,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605110645694</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add">
+      <created>1605198108627</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605198108627</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,14 +339,34 @@
     <option name="LAST_COMMIT_MESSAGE" value="add" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1605191836145">
+    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1605198106690">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1605191836145" />
+    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1605198106690" />
     <state x="463" y="126" key="FileChooserDialogImpl" timestamp="1599749201585">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1599749201585" />
+    <state width="1322" height="172" key="GridCell.Tab.0.bottom" timestamp="1605428315818">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="172" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605428315818" />
+    <state width="1322" height="172" key="GridCell.Tab.0.center" timestamp="1605428315818">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="172" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605428315818" />
+    <state width="1322" height="172" key="GridCell.Tab.0.left" timestamp="1605428315814">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="172" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605428315814" />
+    <state width="1322" height="172" key="GridCell.Tab.0.right" timestamp="1605428315818">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="172" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605428315818" />
+    <state x="263" y="102" key="IDE.errors.dialog" timestamp="1605198127581">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="263" y="102" key="IDE.errors.dialog/0.0.1366.738@0.0.1366.738" timestamp="1605198127581" />
     <state x="0" y="0" width="849" height="595" key="NewModule_or_Project.wizard" timestamp="1598082122896">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -328,10 +375,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="368" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1605185400626" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605110652600">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605198111643">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605110652600" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605198111643" />
     <state width="471" height="736" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1605013581706">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -340,10 +387,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="375" y="195" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1598080626775" />
-    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605109714159">
+    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605435124542">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605109714159" />
+    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605435124542" />
   </component>
   <component name="masterDetails">
     <states>

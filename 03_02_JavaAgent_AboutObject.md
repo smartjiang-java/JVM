@@ -2,31 +2,37 @@
 
 作者：马士兵 http://www.mashibing.com
 
+
+1:对象的创建过程
+2:对象的内存布局
 ## 对象大小（64位机）
-
 ### 观察虚拟机配置
-
 java -XX:+PrintCommandLineFlags -version
 
 ### 普通对象
-
 1. 对象头：markword  8
 2. ClassPointer指针：-XX:+UseCompressedClassPointers 为4字节 不开启为8字节
 3. 实例数据
    1. 引用类型：-XX:+UseCompressedOops 为4字节 不开启为8字节 
       Oops Ordinary Object Pointers
+   2:成员变量,8大基本类型变量
 4. Padding对齐，8的倍数
 
 ### 数组对象
-
 1. 对象头：markword 8
 2. ClassPointer指针同上
 3. 数组长度：4字节
 4. 数组数据
 5. 对齐 8的倍数
 
-## 实验
 
+object对象16字节,8字节脑袋,本来point8字节,但是JVM默认开启指针压缩,变成4字节,4字节对齐,16字节
+数组对象16字节,8字节脑袋,4字节指针,4字节数组长度
+
+
+
+
+## 实验
 1. 新建项目ObjectSize （1.8）
 
 2. 创建文件ObjectSizeAgent
@@ -73,7 +79,6 @@ java -XX:+PrintCommandLineFlags -version
 7. 如何使用该类：
 
    ```java
-   ​```java
       package com.mashibing.jvm.c3_jmm;
       
       import com.mashibing.jvm.agent.ObjectSizeAgent;
@@ -107,7 +112,7 @@ java -XX:+PrintCommandLineFlags -version
 1. 4G以下，直接砍掉高32位
 2. 4G - 32G，默认开启内存压缩 ClassPointers Oops
 3. 32G，压缩无效，使用64位
-   内存并不是越大越好（^-^）
+   内存并不是越大越好
 
 ## IdentityHashCode的问题
 
@@ -122,9 +127,9 @@ https://cloud.tencent.com/developer/article/1485795
 
 https://cloud.tencent.com/developer/article/1482500
 
-## 对象定位
+## 对象定位    T  t =new T();  t是如何找到new出来的T的?
 
 •https://blog.csdn.net/clover_lily/article/details/80095580
 
-1. 句柄池
-2. 直接指针
+1. 句柄池 :间接指针,t指向两个指针,一个指向new出来的T对象,一个指向T.class
+2. 直接指针:直接指向new出来的T对象,T对象有一个指针指向T.class  (Hospot使用此种方式)

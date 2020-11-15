@@ -10,7 +10,13 @@ public class T04_Disorder {
             i++;
             x = 0; y = 0;
             a = 0; b = 0;
+
+            /**
+             * 两个线程如果不出现乱序执行,x,y的可能情况有1.0   0,1   1,1 三种情况
+             * 如果出现了0,0,说明有乱序的存在
+             */
             Thread one = new Thread(new Runnable() {
+                @Override
                 public void run() {
                     //由于线程one先启动，下面这句话让它等一等线程two. 读着可根据自己电脑的实际性能适当调整等待时间.
                     //shortWait(100000);
@@ -20,11 +26,13 @@ public class T04_Disorder {
             });
 
             Thread other = new Thread(new Runnable() {
+                @Override
                 public void run() {
                     b = 1;
                     y = a;
                 }
             });
+
             one.start();other.start();
             one.join();other.join();
             String result = "第" + i + "次 (" + x + "," + y + "）";
@@ -36,7 +44,6 @@ public class T04_Disorder {
             }
         }
     }
-
 
     public static void shortWait(long interval){
         long start = System.nanoTime();
