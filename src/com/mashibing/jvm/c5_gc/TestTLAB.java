@@ -3,6 +3,9 @@ package com.mashibing.jvm.c5_gc;
 //-XX:-DoEscapeAnalysis -XX:-EliminateAllocations -XX:-UseTLAB -Xlog:c5_gc*
 // 逃逸分析 标量替换 线程专有对象分配
 
+/**
+ * 测试桟上分配的开启和关闭
+ */
 public class TestTLAB {
     //User u;
     class User {

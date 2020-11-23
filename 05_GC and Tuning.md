@@ -7,46 +7,40 @@
 #### 1.什么是垃圾
 
 > C语言申请内存：malloc free
->
 > C++： new delete
->
-> c/C++ 手动回收内存
->
+> c/C++ 手动回收,开发效率低,执行效率高.内存容易出两种类型的问题：
+>            1. 忘记回收:内存泄露 
+>            2. 多次回收:非法访问
+> 
 > Java: new ？
->
-> 自动内存回收，编程上简单，系统不容易出错，手动释放内存，容易出两种类型的问题：
->
-> 1. 忘记回收
-> 2. 多次回收
+> GC自动内存回收，编程上简单，系统不容易出错.开发效率高,执行效率低
 
-没有任何引用指向的一个对象或者多个对象（循环引用）
+没有任何引用指向的一个对象或者多个对象（循环引用）称为垃圾
 
 #### 2.如何定位垃圾
-
 1. 引用计数（ReferenceCount） 为0时进行回收
     缺点：不能解决循环引用的问题（ABC互相引用，但这个整体却没有引用指向，合起来一堆垃圾，却无法回收）
 2. 根可达算法(RootSearching)
-      --什么是跟对象(GC roots)？
+      --什么是根对象(GC roots)？ 
     JVM stack(main方法栈帧里new的对象) 
     Native Method stack(main方法里用到的本地方法栈)
     Runtime constant pool(把class加载进去的运行时常量池)
     Static references in method area (方法区内的静态引用)
     Clazz:加载进去的类对象
     
-#### 3.常见的垃圾回收算法
+#### 3.常见的垃圾回收算法（背过）
 
-1. 标记清除(mark sweep) - 位置不连续 产生碎片 效率偏低（两遍扫描）
-2. 拷贝算法 (copying) - 没有碎片，浪费空间,只能用一半
-3. 标记压缩(mark compact) - 没有碎片，效率偏低（两遍扫描，指针需要调整）
+1. 标记清除(mark sweep) - 位置不连续 产生碎片 效率偏低（两遍扫描):存活对象比较高的情况下效率比较高,算法相对比较简单
+                        第一遍扫描是找到那些是有用的,进行标记,第二遍扫描是清除垃圾
+2. 拷贝算法 (copying) - 没有碎片，浪费空间,只能用一半,移动复制对象,需要调整对象引用,扫描一次,适用于存活对象较少的情况适合edon区
+3. 标记压缩(mark compact) 标记整理- 没有碎片，效率偏低（两遍扫描，指针需要调整）,需要移动对象
 
 #### 4.JVM内存分代模型（用于分代垃圾回收算法）
 
 1. 部分垃圾回收器使用的模型
 
-   > 除Epsilon ZGC Shenandoah之外的GC都是使用逻辑分代模型
-   >
+   > 除Epsilon ZGC Shenandoah之外的GC都是使用逻辑分代模型，ZGC之前所有的垃圾回收器都分代
    > G1是逻辑分代，物理不分代
-   >
    > 除此之外不仅逻辑分代，而且物理分代
 
 2. 新生代 + 老年代 + 永久代（1.7）Perm Generation/ 元数据区(1.8) Metaspace
@@ -55,26 +49,37 @@
    3. 字符串常量 1.7 - 永久代，1.8 - 堆
    4. MethodArea逻辑概念 - 永久代、元数据
    
-3. 新生代 = Eden + 2个suvivor区 
+3. 新生代 = Eden + 2个suvivor区，总共一份,默认比例为8:1:1   拷贝算法
    1. YGC回收之后，大多数的对象会被回收，活着的进入s0
-   2. 再次YGC，活着的对象eden + s0 -> s1
+   2. 再次YGC，活着的对象eden + s0 -> s1(或者from --to)
    3. 再次YGC，eden + s1 -> s0
-   4. 年龄足够 -> 老年代 （15 CMS 6）
+   4. 年龄足够 -> 老年代 （15 CMS 6）,通过参数:--XX:MaxTenuingThreshold
    5. s区装不下 -> 老年代
    
-4. 老年代
+4. 老年代:总共三份,标记清除或者标记压缩算法
    1. 顽固分子
    2. 老年代满了FGC Full GC
    
 5. GC Tuning (Generation)
    1. 尽量减少FGC
-   2. MinorGC = YGC
-   3. MajorGC = FGC
+   2. MinorGC = YGC:年轻代空间耗尽 -Xmn
+   3. MajorGC = FGC:老年代无法继续分配内存空间,新生代老年代同事进行回收 -Xms-Xmx
    
-6. 对象分配过程图
+6. 对象分配过程图:一个对象开始尝试在栈上分配,分配不下的会进入Eden区
+   桟上分配:线程私有小对象,无逃逸(没有引用指向  ),支持标量替换,无需调整
+   线程本地分配TLAB(Thread Local Allocation Buffer):占用eden,默认1%,每个线程在eden里有一份自己的空间
+       多线程的时候不用竞争eden就可以申请空间,提高效率,小对象,无需调整
+     上面两项默认打开,-XX:-DoEscopeAnalysis  -XX:-EliminoteAllocations  -XX:-UseTLAB
    ![](对象分配过程详解.png)
 
 7. 动态年龄：（不重要）
+对象何时进入老年代:超过XX:MaxTenuingThreshold 指定次数(YGC)
+-Parallel Scavenage  15
+-CMS 6
+-G1 15
+
+-edon+s1>s2的百分之五十,或者edon+s2>s1的百分之五十 ,年龄大的部分直接放入老年区
+-把年龄最大的放入O
    https://www.jianshu.com/p/989d3b06a49d
 
 8. 分配担保：（不重要）

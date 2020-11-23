@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96329429-90d8-4757-a4a3-7fdc61dce21a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tmp/image/java8大原子操作(已弃用).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/image/对象的创建过程.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/image/重排序必须遵守的原则.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/image/堆内存逻辑分区.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/image/拷贝算法.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/image/标记压缩.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/image/标记清除.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_01_JMM.md" beforeDir="false" afterPath="$PROJECT_DIR$/03_01_JMM.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_02_JavaAgent_AboutObject.md" beforeDir="false" afterPath="$PROJECT_DIR$/03_02_JavaAgent_AboutObject.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04_JavaRuntimeDataArea_InstructionSet.md" beforeDir="false" afterPath="$PROJECT_DIR$/04_JavaRuntimeDataArea_InstructionSet.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$P.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$P.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$X.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$X.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent$MyLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent$MyLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestSync.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestSync.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T04_Disorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T04_Disorder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestSync.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_GC and Tuning.md" beforeDir="false" afterPath="$PROJECT_DIR$/05_GC and Tuning.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/TestTLAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/TestTLAB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +225,15 @@
       <workItem from="1605185332408" duration="113000" />
       <workItem from="1605191235916" duration="6353000" />
       <workItem from="1605343586820" duration="6532000" />
-      <workItem from="1605424463308" duration="9180000" />
+      <workItem from="1605424463308" duration="9318000" />
+      <workItem from="1605622888382" duration="16000" />
+      <workItem from="1605622999857" duration="6396000" />
+      <workItem from="1605792428801" duration="6773000" />
+      <workItem from="1605882714948" duration="602000" />
+      <workItem from="1605883251457" duration="50000" />
+      <workItem from="1605883358735" duration="2055000" />
+      <workItem from="1606135284050" duration="420000" />
+      <workItem from="1606135779245" duration="3966000" />
     </task>
     <task id="LOCAL-00001" summary="更新markdown资料与图片">
       <created>1572139204079</created>
@@ -321,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605198108627</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add">
+      <created>1605436162477</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1605436162477</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,46 +337,46 @@
     <option name="LAST_COMMIT_MESSAGE" value="add" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1605198106690">
+    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1605436158196">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1605198106690" />
+    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1605436158196" />
     <state x="463" y="126" key="FileChooserDialogImpl" timestamp="1599749201585">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1599749201585" />
-    <state width="1322" height="172" key="GridCell.Tab.0.bottom" timestamp="1605428315818">
+    <state width="1322" height="172" key="GridCell.Tab.0.bottom" timestamp="1605436279149">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605428315818" />
-    <state width="1322" height="172" key="GridCell.Tab.0.center" timestamp="1605428315818">
+    <state width="1322" height="172" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605436279149" />
+    <state width="1322" height="172" key="GridCell.Tab.0.center" timestamp="1605436279149">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605428315818" />
-    <state width="1322" height="172" key="GridCell.Tab.0.left" timestamp="1605428315814">
+    <state width="1322" height="172" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605436279149" />
+    <state width="1322" height="172" key="GridCell.Tab.0.left" timestamp="1605436279149">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605428315814" />
-    <state width="1322" height="172" key="GridCell.Tab.0.right" timestamp="1605428315818">
+    <state width="1322" height="172" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605436279149" />
+    <state width="1322" height="172" key="GridCell.Tab.0.right" timestamp="1605436279149">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605428315818" />
-    <state x="263" y="102" key="IDE.errors.dialog" timestamp="1605198127581">
+    <state width="1322" height="172" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605436279149" />
+    <state x="263" y="102" key="IDE.errors.dialog" timestamp="1605436177993">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="263" y="102" key="IDE.errors.dialog/0.0.1366.738@0.0.1366.738" timestamp="1605198127581" />
+    <state x="263" y="102" key="IDE.errors.dialog/0.0.1366.738@0.0.1366.738" timestamp="1605436177993" />
     <state x="0" y="0" width="849" height="595" key="NewModule_or_Project.wizard" timestamp="1598082122896">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="0" width="849" height="595" key="NewModule_or_Project.wizard/0.0.1366.738@0.0.1366.738" timestamp="1598082122896" />
-    <state x="368" y="0" key="SettingsEditor" timestamp="1605185400626">
+    <state x="368" y="0" key="SettingsEditor" timestamp="1605884288910">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="368" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1605185400626" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605198111643">
+    <state x="368" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1605884288910" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605436169399">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605198111643" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605436169399" />
     <state width="471" height="736" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1605013581706">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -387,10 +385,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="375" y="195" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1598080626775" />
-    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605435124542">
+    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605794289698">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605435124542" />
+    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605794289698" />
   </component>
   <component name="masterDetails">
     <states>
