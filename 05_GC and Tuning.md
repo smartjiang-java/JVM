@@ -56,7 +56,7 @@
    4. 年龄足够 -> 老年代 （15 CMS 6）,通过参数:--XX:MaxTenuingThreshold
    5. s区装不下 -> 老年代
    
-4. 老年代:总共三份,标记清除或者标记压缩算法
+4. 老年代:总共二份,标记清除或者标记压缩算法
    1. 顽固分子
    2. 老年代满了FGC Full GC
    
@@ -89,38 +89,53 @@
 #### 5.常见的垃圾回收器
 
 ![常用垃圾回收器](常用垃圾回收器.png)
-
-1. JDK诞生 Serial追随 提高效率，诞生了PS，为了配合CMS，诞生了PN，CMS是1.4版本后期引入，CMS是里程碑式的GC，它开启了并发回收的过程，但是CMS毛病较多，因此目前任何一个JDK版本默认是CMS
-   并发垃圾回收是因为无法忍受STW
-2. Serial 年轻代 串行回收
-3. PS 年轻代 并行回收
-4. ParNew 年轻代 配合CMS的并行回收
-5. SerialOld 
-6. ParallelOld
-7. ConcurrentMarkSweep 老年代 并发的， 垃圾回收和应用程序同时运行，降低STW的时间(200ms)
-   CMS问题比较多，所以现在没有一个版本默认是CMS，只能手工指定
-   CMS既然是MarkSweep，就一定会有碎片化的问题，碎片到达一定程度，CMS的老年代分配对象分配不下的时候，使用SerialOld 进行老年代回收
-   想象一下：
+1. 内存几十兆,JDK诞生 Serial追随
+   Serial 年轻代 串行回收，单cpu效率最高,是单机模式默认的垃圾回收期,单线程,停顿时间比较长,复制算法
+   Serial Old  老年代,单线程
+2. 内存上百兆 - 几个G,提高效率，诞生了PS,回收垃圾的时候无法制造垃圾
+   Parallel Scavenge 年轻代 并行回收,拷贝算法
+   Parallel Old 老年代,标记压缩
+3. 内存20G
+   ParNew 年轻代,复制算法,STW,和ps的区别就是做了一些增强,配合CMS的并行回收,
+   ConcurrentMarkSweep 老年代 并发的，并发垃圾回收是因为无法忍受STW(stop-the-world),在回收垃圾的时候还可以产生新垃圾
+    垃圾回收和应用程序同时运行，降低STW的时间(200ms)MS问题比较多，所以现在没有一个版本默认是CMS，只能手工指定
+    CMS的缺点:
+   1:CMS既然是MarkSweep，就一定会有碎片化的问题，碎片到达一定程度，CMS的老年代分配对象分配不下的时候，
+      使用SerialOld 进行老年代回收,单线程,Memory Fragmentation
+       > -XX:+UseCMSCompactAtFullCollection
+       > -XX:CMSFullGCsBeforeCompaction 默认为0 指的是经过多少次FGC才进行压缩
+   2:产生浮动垃圾 Floating Garbage
+      Concurrent Mode Failure
+      产生：if the concurrent collector is unable to finish reclaiming the unreachable objects before the tenured generation fills up, or if an allocation cannot be satisfiedwith the available free space blocks in the tenured generation, then theapplication is paused and the collection is completed with all the applicationthreads stopped
+      解决方案：降低触发CMS的阈值,保持老年代有足够的空间
+      –XX:CMSInitiatingOccupancyFraction 92% 可以降低这个值，让CMS保持老年代足够的空间
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       >
+ 从线程角度可以将CMS的GC过程分成以下几个过程:
+ 初始标记:找到根对象,并标记,STW,时间很短,根可达算法
+ 预标记
+ 并发标记:百分之八十GC的时间都浪费都这里,和应用程序一起运行,多数垃圾在此标记, 算法：三色标记 + Incremental Update
+ 重新标记:STW,将应用程序暂停,将新产生的垃圾进行标记,由于新产生的垃圾并不多,所以时间也很多
+ 并发清理:此过程也会产生垃圾,成为浮动垃圾,等待下一次CMS运行过程进行清理
+ 整理
+ 
+   想象一下： 
    PS + PO -> 加内存 换垃圾回收器 -> PN + CMS + SerialOld（几个小时 - 几天的STW）
    几十个G的内存，单线程回收 -> G1 + FGC 几十个G -> 上T内存的服务器 ZGC
-   算法：三色标记 + Incremental Update
-8. G1(10ms)
+4. 内存上百G
+   G1(10ms)
    算法：三色标记 + SATB
-9. ZGC (1ms) PK C++
-   算法：ColoredPointers + LoadBarrier
-10. Shenandoah
+5. 内存4T - 16T（JDK13）
+   ZGC (1ms) PK C++
+   算法：ColoredPointers(颜色指针) + LoadBarrier
+6. Shenandoah
     算法：ColoredPointers + WriteBarrier
-11. Eplison
-12. PS 和 PN区别的延伸阅读：
-    ▪[https://docs.oracle.com/en/java/javase/13/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73](https://docs.oracle.com/en/java/javase/13/gctuning/ergonomics.html)
-13. 垃圾收集器跟内存大小的关系
-    1. Serial 几十兆
-    2. PS 上百兆 - 几个G
-    3. CMS - 20G
-    4. G1 - 上百G
-    5. ZGC - 4T - 16T（JDK13）
+7. Eplison
+8. PS 和 PN区别的延伸阅读：
+   ▪[https://docs.oracle.com/en/java/javase/13/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73](https://docs.oracle.com/en/java/javase/13/gctuning/ergonomics.html)
 
-1.8默认的垃圾回收：PS + ParallelOld
+Serial+Serial Old
+CMS+ParNew 
+1.8默认的垃圾回收：Parallel Scavenge + Parallel Old(不去指定其他的,默认就是这个)
 
 ### 常见垃圾回收器组合参数设定：(1.8)
 

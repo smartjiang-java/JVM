@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96329429-90d8-4757-a4a3-7fdc61dce21a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tmp/image/堆内存逻辑分区.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/image/拷贝算法.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/image/标记压缩.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/image/标记清除.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_JavaRuntimeDataArea_InstructionSet.md" beforeDir="false" afterPath="$PROJECT_DIR$/04_JavaRuntimeDataArea_InstructionSet.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/05_GC and Tuning.md" beforeDir="false" afterPath="$PROJECT_DIR$/05_GC and Tuning.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/TestTLAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/TestTLAB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,17 +165,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.T03_SizeOfAnObject" />
       <item itemvalue="Application.StackOverFlow" />
@@ -233,7 +216,9 @@
       <workItem from="1605883251457" duration="50000" />
       <workItem from="1605883358735" duration="2055000" />
       <workItem from="1606135284050" duration="420000" />
-      <workItem from="1606135779245" duration="3966000" />
+      <workItem from="1606135779245" duration="4030000" />
+      <workItem from="1606220935528" duration="1232000" />
+      <workItem from="1606225693560" duration="4945000" />
     </task>
     <task id="LOCAL-00001" summary="更新markdown资料与图片">
       <created>1572139204079</created>
@@ -319,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605436162477</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add">
+      <created>1606141234901</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1606141234901</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,10 +329,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="add" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1605436158196">
+    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1606141231010">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1605436158196" />
+    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1606141231010" />
     <state x="463" y="126" key="FileChooserDialogImpl" timestamp="1599749201585">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -373,10 +365,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="368" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1605884288910" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605436169399">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1606141240573">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605436169399" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1606141240573" />
     <state width="471" height="736" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1605013581706">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
