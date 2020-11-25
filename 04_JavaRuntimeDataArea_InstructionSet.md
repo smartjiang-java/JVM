@@ -73,7 +73,6 @@ invokeStatic:调用静态方法
 invokeInterface:new对象时上转型,通过接口去调用方法
 InvokeDynamic:JVM最难的指令,1.7之后java支持动态语言后加入
        lambda表达式或者反射或者其他动态语言scala kotlin，或者CGLib ASM，动态产生的class，会用到的指令
-
 iconst_1  :把1这个立即数压栈
 imul:相乘
 clinit:类在初始化阶段调用的方法,将static变量赋定义值
