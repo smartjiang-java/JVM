@@ -106,7 +106,10 @@
        > -XX:CMSFullGCsBeforeCompaction 默认为0 指的是经过多少次FGC才进行压缩
    2:产生浮动垃圾 Floating Garbage
       Concurrent Mode Failure
-      产生：if the concurrent collector is unable to finish reclaiming the unreachable objects before the tenured generation fills up, or if an allocation cannot be satisfiedwith the available free space blocks in the tenured generation, then theapplication is paused and the collection is completed with all the applicationthreads stopped
+      产生：if the concurrent collector is unable to finish reclaiming the unreachable objects before 
+           the tenured generation fills up, or if an allocation cannot be satisfiedwith the available free 
+           space blocks in the tenured generation, then theapplication is paused and the collection is 
+           completed with all the applicationthreads stopped
       解决方案：降低触发CMS的阈值,保持老年代有足够的空间
       –XX:CMSInitiatingOccupancyFraction 92% 可以降低这个值，让CMS保持老年代足够的空间
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        >
@@ -125,32 +128,32 @@
    G1(10ms)
    算法：三色标记 + SATB
 5. 内存4T - 16T（JDK13）
-   ZGC (1ms) PK C++
+   ZGC (1ms) PK C++   ，ZGC现在只支持linux
    算法：ColoredPointers(颜色指针) + LoadBarrier
 6. Shenandoah
     算法：ColoredPointers + WriteBarrier
-7. Eplison
+7. Epliso-0n
 8. PS 和 PN区别的延伸阅读：
    ▪[https://docs.oracle.com/en/java/javase/13/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73](https://docs.oracle.com/en/java/javase/13/gctuning/ergonomics.html)
 
 Serial+Serial Old
 CMS+ParNew 
 1.8默认的垃圾回收：Parallel Scavenge + Parallel Old(不去指定其他的,默认就是这个)
+1.9默认G1
 
 ### 常见垃圾回收器组合参数设定：(1.8)
-
 * -XX:+UseSerialGC = Serial New (DefNew) + Serial Old
-  * 小型程序。默认情况下不会是这种选项，HotSpot会根据计算及配置和JDK版本自动选择收集器
+   小型程序。默认情况下不会是这种选项，HotSpot会根据计算及配置和JDK版本自动选择收集器
 * -XX:+UseParNewGC = ParNew + SerialOld
-  * 这个组合已经很少用（在某些版本中已经废弃）
-  * https://stackoverflow.com/questions/34962257/why-remove-support-for-parnewserialold-anddefnewcms-in-the-future
+   这个组合已经很少用（在某些版本中已经废弃）
+   https://stackoverflow.com/questions/34962257/why-remove-support-for-parnewserialold-anddefnewcms-in-the-future
 * -XX:+UseConc<font color=red>(urrent)</font>MarkSweepGC = ParNew + CMS + Serial Old
 * -XX:+UseParallelGC = Parallel Scavenge + Parallel Old (1.8默认) 【PS + SerialOld】
 * -XX:+UseParallelOldGC = Parallel Scavenge + Parallel Old
 * -XX:+UseG1GC = G1
 * Linux中没找到默认GC的查看方法，而windows中会打印UseParallelGC 
-  * java +XX:+PrintCommandLineFlags -version
-  * 通过GC的日志来分辨
+    java +XX:+PrintCommandLineFlags -version
+    通过GC的日志来分辨
 
 * Linux下1.8版本默认的垃圾回收器到底是什么？
 
@@ -162,19 +165,14 @@ CMS+ParNew
 * JVM的命令行参数参考：https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html
 
 * HotSpot参数分类
-
   > 标准： - 开头，所有的HotSpot都支持
-  >
   > 非标准：-X 开头，特定版本HotSpot支持特定命令
-  >
   > 不稳定：-XX 开头，下个版本可能取消
 
   java -version
-
   java -X
 
   试验用程序：
-
   ```java
   import java.util.List;
   import java.util.LinkedList;
@@ -192,14 +190,22 @@ CMS+ParNew
   ```
 
   1. 区分概念：内存泄漏memory leak，内存溢出out of memory
-  2. java -XX:+PrintCommandLineFlags HelloGC
+  2. java -XX:+PrintCommandLineFlags HelloGC  :查看起始的大小
   3. java -Xmn10M -Xms40M -Xmx60M -XX:+PrintCommandLineFlags -XX:+PrintGC  HelloGC
-     PrintGCDetails PrintGCTimeStamps PrintGCCauses
-  4. java -XX:+UseConcMarkSweepGC -XX:+PrintCommandLineFlags HelloGC
-  5. java -XX:+PrintFlagsInitial 默认参数值
+     PrintGCDetails:打印GC详细信息
+     PrintGCTimeStamps:打印GC产生的时候系统时间
+     PrintGCCauses:打印GC和产生的原因
+      将堆大小一开始设置为Xms最小40M,最大Xmx为60M,一般这两个最好设置为一样,避免产生弹性压缩  
+      Xmn新生代的大小是10M,-XX:+PrintGC是打印GC回收信息     
+  4. java -XX:+UseConcMarkSweepGC -XX:+PrintCommandLineFlags -XX:+PrintGC  HelloGC
+      使用CMS的垃圾回收器并打印
+  5. java -XX:+PrintFlagsInitial 打印所有的JVM参数
   6. java -XX:+PrintFlagsFinal 最终参数值
   7. java -XX:+PrintFlagsFinal | grep xxx 找到对应的参数
   8. java -XX:+PrintFlagsFinal -version |grep GC
+  9. java -XX:MaxTenuingThreshold:调节新生代进入老年代的年龄
+  10.java -XX:-DoEscopeAnalysis  -XX:-EliminoteAllocations  -XX:-UseTLAB  创建对象默认在桟上,线程本地创建,默认打开
+  11.java 
 
 ### PS GC日志详解
 
@@ -209,7 +215,9 @@ PS日志格式
 
 ![GC日志详解](./GC日志详解.png)
 
-heap dump部分：
+times中的    real:总共多少时间  user:用户态执行此命令花费时间    sys:内核态执行此命令花费时间
+
+heap dump(内存溢出)部分：
 
 ```java
 eden space 5632K, 94% used [0x00000000ff980000,0x00000000ffeb3e28,0x00000000fff00000)
@@ -223,7 +231,7 @@ total = eden + 1个survivor
 ### 调优前的基础概念：
 
 1. 吞吐量：用户代码时间 /（用户代码执行时间 + 垃圾回收时间）
-2. 响应时间：STW越短，响应时间越好
+2. 响应时间：STW越短，响应时间越好 
 
 所谓调优，首先确定，追求啥？吞吐量优先，还是响应时间优先？还是在满足一定的响应时间的情况下，要求达到多大的吞吐量...
 
