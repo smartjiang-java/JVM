@@ -236,64 +236,62 @@ total = eden + 1个survivor
 所谓调优，首先确定，追求啥？吞吐量优先，还是响应时间优先？还是在满足一定的响应时间的情况下，要求达到多大的吞吐量...
 
 问题：
-
-科学计算，吞吐量。数据挖掘，thrput。吞吐量优先的一般：（PS + PO）
-
+科学计算，吞吐量优先。数据挖掘，thrput。吞吐量优先的一般：（PS + PO）
 响应时间：网站 GUI API （1.8 G1）
 
 ### 什么是调优？
-
 1. 根据需求进行JVM规划和预调优
 2. 优化运行JVM运行环境（慢，卡顿）
 3. 解决JVM运行过程中出现的各种问题(OOM)
 
 ### 调优，从规划开始
-
 * 调优，从业务场景开始，没有业务场景的调优都是耍流氓
-  
 * 无监控（压力测试，能看到结果），不调优
 
 * 步骤：
-  1. 熟悉业务场景（没有最好的垃圾回收器，只有最合适的垃圾回收器）
+  1. 熟悉业务场景,选定合适的垃圾回收器（没有最好的垃圾回收器，只有最合适的垃圾回收器）
      1. 响应时间、停顿时间 [CMS G1 ZGC] （需要给用户作响应）
      2. 吞吐量 = 用户时间 /( 用户时间 + GC时间) [PS]
   2. 选择回收器组合
-  3. 计算内存需求（经验值 1.5G 16G）
-  4. 选定CPU（越高越好）
+  3. 计算内存需求,内存大小没有一定的规定,小点YGC频繁点（经验值 1.5G 16G）
+  4. 选定CPU（越高越好）,一是多核cpu可以多线程运行,而是好的CPU可以减少回收时间,减少内存压力
   5. 设定年代大小、升级年龄
-  6. 设定日志参数
-     1. -Xloggc:/opt/xxx/logs/xxx-xxx-gc-%t.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=20M -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCCause
+  6. 设定日志参数(5和20需要自己设置)
+     1.java -Xloggc:/opt/xxx/logs/xxx-xxx-gc-%t.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=20M -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCCause
+        设定日志的名称,按系统时间产生多个             循环使用                 5个日志文件               每个的大小20M               打印GC详细信息          打印GC时间         GC原因      
+         注意: 为什么设定有5个日志文件,每个20M?
+            可以控制日志大小为100M, 5个日志文件,循环产生,满了之后干掉最前面的那个,继续产生                                                                                    
      2. 或者每天产生一个日志文件
   7. 观察日志情况
   
-* 案例1：垂直电商，最高每日百万订单，处理订单系统需要什么样的服务器配置？
+* 案例1：垂直电商(只卖某一类产品)，最高每日百万订单，处理订单系统需要什么样的服务器配置？
 
-  > 这个问题比较业余，因为很多不同的服务器配置都能支撑(1.5G 16G)
-  >
-  > 1小时360000集中时间段， 100个订单/秒，（找一小时内的高峰期，1000订单/秒）
-  >
+   100万并发:并发有QPS,TPS,PPS,别管什么,PS不变,即precend/s,每秒多少次,每秒进行上百万次的页面浏览,是没问题的,
+             是可以达到的,一般我们说的百万并发指的是百万个Tranction(业务处理),因为Tranction的时间非常短
+             但是,100万订单/s就不专业了,据说淘宝2020年最高并发54万,12306号称上百万并发,不太可能的.所以好多规划
+             是不太靠谱的.
+  > 这个问题比较业余，因为很多不同的服务器配置都能支撑(1.5G  16G)              
+  > 100完订单一般都是在晚上5-7点产生,1小时360000集中时间段， 100个订单/秒，（找一小时内的高峰期，1000订单/秒）
   > 经验值，
-  >
-  > 非要计算：一个订单产生需要多少内存？512K * 1000 500M内存
-  >
+  > 非要计算：一个订单产生需要多少内存(new出来与订单相关的所有对象,加起来算一下)？512K * 1000 500M内存
+      250M不行吗?  可以呀,只要响应时间够快,                                                                                                                                                                                                                                                                                           > 
   > 专业一点儿问法：要求响应时间100ms
-  >
   > 压测！
+  找一个市面上性价比比较高的服务器,测试一下,不行的加CPU,扩内存,还不行的话上云,用云服务器                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                
 
 * 案例2：12306遭遇春节大规模抢票应该如何支撑？
 
   > 12306应该是中国并发量最大的秒杀网站：
-  >
   > 号称并发量100W最高
-  >
   > CDN -> LVS -> NGINX -> 业务系统 -> 每台机器1W并发（10K问题） 100台机器
   >
-  > 普通电商订单 -> 下单 ->订单系统（IO）减库存 ->等待用户付款
+  > 普通电商订单 -> 下单 ->订单系统（IO）减库存 ->等待用户付款    
+  >     减库存和付款同步进行,订单才算完成的话tps撑不了多少,一般几十个就要崩
   >
   > 12306的一种可能的模型： 下单 -> 减库存 和 订单(redis kafka) 同时异步进行 ->等付款
   >
   > 减库存最后还会把压力压到一台服务器
-  >
   > 可以做分布式本地库存 + 单独服务器做库存均衡
   >
   > 大流量的处理方法：分而治之
@@ -301,20 +299,19 @@ total = eden + 1个survivor
 * 怎么得到一个事务会消耗多少内存？
 
   > 1. 弄台机器，看能承受多少TPS？是不是达到目标？扩容或调优，让它达到
-  >
   > 2. 用压测来确定
 
 ### 优化环境
-
 1. 有一个50万PV的资料类网站（从磁盘提取文档到内存）原服务器32位，1.5G
    的堆，用户反馈网站比较缓慢，因此公司决定升级，新的服务器为64位，16G
    的堆内存，结果用户反馈卡顿十分严重，反而比以前效率更低了
    1. 为什么原网站慢?
-      很多用户浏览数据，很多数据load到内存，内存不足，频繁GC，STW长，响应时间变慢
+      很多用户浏览数据，很多数据load到内存，内存不足，频繁GC，STW长，响应时间变慢 
    2. 为什么会更卡顿？
-      内存越大，FGC时间越长
+      内存越大，FGC时间越长,STW时间变长了
    3. 咋办？
-      PS -> PN + CMS 或者 G1
+      PS -> PN + CMS 或者 G1,一直使用PS单线程回收垃圾,会停止其他操作,停止制造对象
+      
 2. 系统CPU经常100%，如何调优？(面试高频)
    CPU100%那么一定有线程在占用系统资源，
    1. 找出哪个进程cpu高（top）
@@ -322,9 +319,11 @@ total = eden + 1个survivor
    3. 导出该线程的堆栈 (jstack)
    4. 查找哪个方法（栈帧）消耗时间 (jstack)
    5. 工作线程占比高 | 垃圾回收线程占比高
+   
 3. 系统内存飙高，如何查找问题？（面试高频）
-   1. 导出堆内存 (jmap)
+   1.堆占的比较多,导出堆内存 (jmap)
    2. 分析 (jhat jvisualvm mat jprofiler ... )
+   
 4. 如何监控JVM
    1. jstat jvisualvm jprofiler arthas top...
 
@@ -394,45 +393,45 @@ total = eden + 1个survivor
    
            return taskList;
        }
-   }
-   
+   } 
    ```
 
 2. java -Xms200M -Xmx200M -XX:+PrintGC com.mashibing.jvm.gc.T15_FullGC_Problem01
 
 3. 一般是运维团队首先受到报警信息（CPU Memory）
 
-4. top命令观察到问题：内存不断增长 CPU占用率居高不下
+4. top命令观察到问题(列出全部进程)：内存不断增长 CPU占用率居高不下,找到进程id号
+   jps定位具体java进程(只列出java相关的进程)
 
-5. top -Hp 观察进程中的线程，哪个线程CPU和内存占比高
+5. top -Hp  id号  观察进程中的线程，哪个线程CPU和内存占比高,找到线程id号
 
-6. jps定位具体java进程
-   jstack 定位线程状况，重点关注：WAITING BLOCKED
+6. jstack 线程id号     
+   jstack 定位线程状况，重点关注：WAITING BLOCKED   
    eg.
-   waiting on <0x0000000088ca3310> (a java.lang.Object)
+   waiting on <0x0000000088ca3310> (a java.lang.Object)  指的是synchronized的锁对象
    假如有一个进程中100个线程，很多线程都在waiting on <xx> ，一定要找到是哪个线程持有这把锁
    怎么找？搜索jstack dump的信息，找<xx> ，看哪个线程持有这把锁RUNNABLE
    作业：1：写一个死锁程序，用jstack观察 2 ：写一个程序，一个线程持有锁不释放，其他线程等待
 
-7. 为什么阿里规范里规定，线程的名称（尤其是线程池）都要写有意义的名称
-   怎么样自定义线程池里的线程名称？（自定义ThreadFactory）
+7. 为什么阿里规范里规定，线程的名称（尤其是线程池）都要写有意义的名称    ---->出了问题容易定位
+   怎么样自定义线程池里的线程名称？--->（自定义ThreadFactory）
 
-8. jinfo pid 
+8. jinfo pid   列出进城的详细信息,帮助不是那么大
 
-9. jstat -gc 动态观察gc情况 / 阅读GC日志发现频繁GC / arthas观察 / jconsole/jvisualVM/ Jprofiler（最好用）
+9. jstat -gc  pid 动态观察gc情况 / 阅读GC日志发现频繁GC / arthas观察 / jconsole/jvisualVM/ Jprofiler（最好用）
    jstat -gc 4655 500 : 每个500个毫秒打印GC的情况
-   如果面试官问你是怎么定位OOM问题的？如果你回答用图形界面（错误）
+   如果面试官问你是怎么定位OOM问题的？如果你回答用图形界面（错误）,图形化界面会影响服务器的性能,有一份服务在影响原来的主进程
    1：已经上线的系统不用图形界面用什么？（cmdline arthas）
-   2：图形界面到底用在什么地方？测试！测试的时候进行监控！（压测观察）
+   2：图形界面到底用在什么地方？上线之前做测试！测试的时候进行监控！（压测观察）
 
-10. jmap - histo 4655 | head -20，查找有多少对象产生
+使用命令行进行跟踪
+10. jmap - histo 4655 | head -20，查找有多少对象产生:列出前20个,在线定位
 
-11. jmap -dump:format=b,file=xxx pid ：
-
-    线上系统，内存特别大，jmap执行期间会对进程产生很大影响，甚至卡顿（电商不适合）
+11. jmap -dump:format=b,file=xxx pid ： 一般不使用这个命令
+    线上系统，内存特别大，在线转储,jmap执行期间会对进程产生很大影响，甚至卡顿（电商不适合）
     1：设定了参数HeapDump，OOM的时候会自动产生堆转储文件
     2：<font color='red'>很多服务器备份（高可用），停掉这台服务器对其他服务器不影响</font>
-    3：在线定位(一般小点儿公司用不到)
+    3：在线定位(一般小点儿公司用不到):arthas
 
 12. java -Xms20M -Xmx20M -XX:+UseParallelGC -XX:+HeapDumpOnOutOfMemoryError com.mashibing.jvm.gc.T15_FullGC_Problem01
 
@@ -445,23 +444,20 @@ jhat -J-mx512M xxx.dump
     
 14. 找到代码的问题
 
-#### jconsole远程连接
+#### jconsole远程连接(JMX协议),在jdk的bin下面
 
 1. 程序启动加入参数：
-
    > ```shell
    > java -Djava.rmi.server.hostname=192.168.17.11 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11111 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false XXX
    > ```
 
 2. 如果遭遇 Local host name unknown：XXX的错误，修改/etc/hosts文件，把XXX加入进去
-
    > ```java
    > 192.168.17.11 basic localhost localhost.localdomain localhost4 localhost4.localdomain4
    > ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
    > ```
 
 3. 关闭linux防火墙（实战中应该打开对应端口）
-
    > ```shell
    > service iptables stop
    > chkconfig iptables off #永久关闭
@@ -469,7 +465,7 @@ jhat -J-mx512M xxx.dump
 
 4. windows上打开 jconsole远程连接 192.168.17.11:11111
 
-#### jvisualvm远程连接
+#### jvisualvm远程连接(JMX协议),在jdk的bin下面
 
  https://www.cnblogs.com/liugh/p/7620336.html （简单做法）
 
@@ -482,7 +478,8 @@ jhat -J-mx512M xxx.dump
 * jvm观察jvm信息
 * thread定位线程问题
 * dashboard 观察系统情况
-* heapdump + jhat分析
+* heapdump +路径(可不加) 分析:导出日志文件,一般不建议使用导出
+* jhat +日志名称  进行分析   jhat -J-mx512M xxx.dump
 * jad反编译
    动态代理生成类的问题定位
    第三方的类（观察代码）
@@ -505,12 +502,10 @@ jhat -J-mx512M xxx.dump
 #### CMS的问题
 
 1. Memory Fragmentation
-
    > -XX:+UseCMSCompactAtFullCollection
    > -XX:CMSFullGCsBeforeCompaction 默认为0 指的是经过多少次FGC才进行压缩
 
 2. Floating Garbage
-
    > Concurrent Mode Failure
    > 产生：if the concurrent collector is unable to finish reclaiming the unreachable objects before the tenured generation fills up, or if an allocation cannot be satisfiedwith the available free space blocks in the tenured generation, then theapplication is paused and the collection is completed with all the applicationthreads stopped
    >
@@ -617,7 +612,6 @@ jhat -J-mx512M xxx.dump
 ```
 
 
-
 ### 案例汇总
 
 OOM产生的原因多种多样，有些程序未必产生OOM，不断FGC(CPU飙高，但内存回收特别少) （上面案例）
@@ -632,7 +626,7 @@ OOM产生的原因多种多样，有些程序未必产生OOM，不断FGC(CPU飙�
    解决问题 加内存 + 更换垃圾回收器 G1
    真正问题在哪儿？不知道
 
-4. tomcat http-header-size过大问题（Hector）
+4. tomcat http-header-size过大问题（Hector）:这个参数默认是4096,每启动一个tomcat连接都会占用那么大的内存
 
 5. lambda表达式导致方法区溢出问题(MethodArea / Perm Metaspace)
    LambdaGC.java     -XX:MaxMetaspaceSize=9M -XX:+PrintGCDetails
@@ -678,17 +672,18 @@ OOM产生的原因多种多样，有些程序未必产生OOM，不断FGC(CPU飙�
    	at javax.management.remote.rmi.RMIConnectorServer.encodeStubInAddress(RMIConnectorServer.java:690)
    	at javax.management.remote.rmi.RMIConnectorServer.start(RMIConnectorServer.java:439)
    	at sun.management.jmxremote.ConnectorBootstrap.startLocalConnectorServer(ConnectorBootstrap.java:550)
-   	at sun.management.Agent.startLocalManagementAgent(Agent.java:137)
-   
+   	at sun.management.Agent.startLocalManagementAgent(Agent.java:137)  
    ```
 
 6. 直接内存溢出问题（少见）
    《深入理解Java虚拟机》P59，使用Unsafe分配直接内存，或者使用NIO的问题
 
 7. 栈溢出问题
-   -Xss设定太小
+   -Xss设定太小   例如递归调用
 
 8. 比较一下这两段程序的异同，分析哪一个是更优的写法：
+   第一种最好,只有一个object对象,产生新的对象,会改边引用,原来的对象就可以被回收;
+   而第二种会不断创建对象和引用,循环没有结束之前时候不会释放的.
 
    ```java 
    Object o = null;
@@ -705,9 +700,9 @@ OOM产生的原因多种多样，有些程序未必产生OOM，不断FGC(CPU飙�
    ```
 
 9. 重写finalize引发频繁GC
-   小米云，HBase同步系统，系统通过nginx访问超时报警，最后排查，C++程序员重写finalize引发频繁GC问题
-为什么C++程序员会重写finalize？（new delete）
-   finalize耗时比较长（200ms）
+   小米云，HBase同步系统，系统通过nginx访问超时报警(cpu飙高,不断FGC)，最后排查，C++程序员重写finalize引发频繁GC问题
+为什么C++程序员会重写finalize？（c++手动回收内存(析构函数),先new再delete(调用析构函数),C++以为finalize就是析构）
+   finalize耗时比较长（200ms),回收的时候调用finalize,回收不过来
    
 10. 如果有一个系统，内存一直消耗不超过10%，但是观察GC日志，发现FGC总是频繁产生，会是什么引起的？
     System.gc() (这个比较Low)
@@ -719,8 +714,10 @@ OOM产生的原因多种多样，有些程序未必产生OOM，不断FGC(CPU飙�
 13. new 大量线程，会产生 native thread OOM，（low）应该用线程池，
     解决方案：减少堆空间（太TMlow了）,预留更多内存产生native thread
     JVM内存占物理内存比例 50% - 80%
+    
+    本地方法桟溢出:不断创建线程池,线程池在本地方法区
 
-
+JDK动态代理产生的类信息，不会放到永久代中，而是放在堆中。
 ### GC常用参数
 
 * -Xmn -Xms -Xmx -Xss
