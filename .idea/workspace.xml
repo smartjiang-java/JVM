@@ -4,6 +4,7 @@
     <list default="true" id="96329429-90d8-4757-a4a3-7fdc61dce21a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/05_GC and Tuning.md" beforeDir="false" afterPath="$PROJECT_DIR$/05_GC and Tuning.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T15_FullGC_Problem01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T15_FullGC_Problem01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +25,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>init</find>
-      <find>getSystem</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,10 +58,8 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\java资源全套\program\idea program\JVM\tmp\image" />
-      <recent name="C:\work\ijprojects\JVM" />
-      <recent name="C:\work\ijprojects\JVM\src\com\mashibing\jvm\cms" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.mashibing.jvm.c4_RuntimeDataAreaAndInstructionSet" />
@@ -75,8 +68,10 @@
       <recent name="com.mashibing.jvm.bytecode" />
       <recent name="com.mashibing.jvm.gc" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\java资源全套\program\idea program\JVM\tmp\image" />
+      <recent name="C:\work\ijprojects\JVM" />
+      <recent name="C:\work\ijprojects\JVM\src\com\mashibing\jvm\cms" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -85,20 +80,7 @@
       <select />
     </treeState>
   </component>
-  <component name="RunManager" selected="Application.TestSync">
-    <configuration name="StackOverFlow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.StackOverFlow" />
-      <module name="JVM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mashibing.jvm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.T01_HelloGC">
     <configuration name="T001_ClassLoadingProcedure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c2_classloader.T001_ClassLoadingProcedure" />
       <module name="JVM" />
@@ -118,6 +100,22 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.mashibing.jvm.c2_classloader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="T01_HelloGC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="E:\jdk8\jre" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c5_gc.T01_HelloGC" />
+      <module name="JVM" />
+      <shortenClasspath name="NONE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mashibing.jvm.c5_gc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -167,19 +165,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.T03_SizeOfAnObject" />
-      <item itemvalue="Application.StackOverFlow" />
-      <item itemvalue="Application.T04_Disorder" />
-      <item itemvalue="Application.T002_ClassLoaderLevel" />
       <item itemvalue="Application.T001_ClassLoadingProcedure" />
+      <item itemvalue="Application.T002_ClassLoaderLevel" />
+      <item itemvalue="Application.T01_HelloGC" />
+      <item itemvalue="Application.T04_Disorder" />
       <item itemvalue="Application.TestSync" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestSync" />
-        <item itemvalue="Application.T001_ClassLoadingProcedure" />
-        <item itemvalue="Application.T002_ClassLoaderLevel" />
         <item itemvalue="Application.T04_Disorder" />
-        <item itemvalue="Application.StackOverFlow" />
+        <item itemvalue="Application.T01_HelloGC" />
+        <item itemvalue="Application.T002_ClassLoaderLevel" />
+        <item itemvalue="Application.T001_ClassLoadingProcedure" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +216,17 @@
       <workItem from="1606135284050" duration="420000" />
       <workItem from="1606135779245" duration="4030000" />
       <workItem from="1606220935528" duration="1232000" />
-      <workItem from="1606225693560" duration="4945000" />
+      <workItem from="1606225693560" duration="5892000" />
+      <workItem from="1606305041897" duration="3767000" />
+      <workItem from="1606309015136" duration="1340000" />
+      <workItem from="1606310484823" duration="4351000" />
+      <workItem from="1606569864634" duration="974000" />
+      <workItem from="1606571352790" duration="84000" />
+      <workItem from="1606571535297" duration="19503000" />
+      <workItem from="1606648583173" duration="5951000" />
+      <workItem from="1606741535119" duration="617000" />
+      <workItem from="1607257232100" duration="699000" />
+      <workItem from="1607258055000" duration="6314000" />
     </task>
     <task id="LOCAL-00001" summary="更新markdown资料与图片">
       <created>1572139204079</created>
@@ -311,7 +319,28 @@
       <option name="project" value="LOCAL" />
       <updated>1606141234901</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="gc learn">
+      <created>1606231890550</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1606231890550</updated>
+    </task>
+    <task id="LOCAL-00015" summary="learn GC日志">
+      <created>1606314923331</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1606314923331</updated>
+    </task>
+    <task id="LOCAL-00016" summary="learn GC日志">
+      <created>1606663237694</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1606663237694</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,61 +355,63 @@
     <MESSAGE value="第八课" />
     <MESSAGE value="第十课" />
     <MESSAGE value="add" />
-    <option name="LAST_COMMIT_MESSAGE" value="add" />
+    <MESSAGE value="gc learn" />
+    <MESSAGE value="learn GC日志" />
+    <option name="LAST_COMMIT_MESSAGE" value="learn GC日志" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1606141231010">
+    <state x="137" y="22" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606312369378">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1606141231010" />
+    <state x="137" y="22" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1606312369378" />
+    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1606663233897">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1606663233897" />
     <state x="463" y="126" key="FileChooserDialogImpl" timestamp="1599749201585">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1599749201585" />
-    <state width="1322" height="172" key="GridCell.Tab.0.bottom" timestamp="1605436279149">
+    <state width="1322" height="176" key="GridCell.Tab.0.bottom" timestamp="1606310367660">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605436279149" />
-    <state width="1322" height="172" key="GridCell.Tab.0.center" timestamp="1605436279149">
+    <state width="1322" height="176" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1606310367660" />
+    <state width="1322" height="176" key="GridCell.Tab.0.center" timestamp="1606310367660">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605436279149" />
-    <state width="1322" height="172" key="GridCell.Tab.0.left" timestamp="1605436279149">
+    <state width="1322" height="176" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1606310367660" />
+    <state width="1322" height="176" key="GridCell.Tab.0.left" timestamp="1606310367656">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605436279149" />
-    <state width="1322" height="172" key="GridCell.Tab.0.right" timestamp="1605436279149">
+    <state width="1322" height="176" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1606310367656" />
+    <state width="1322" height="176" key="GridCell.Tab.0.right" timestamp="1606310367660">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605436279149" />
-    <state x="263" y="102" key="IDE.errors.dialog" timestamp="1605436177993">
+    <state width="1322" height="176" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1606310367660" />
+    <state x="263" y="102" key="IDE.errors.dialog" timestamp="1607263960684">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="263" y="102" key="IDE.errors.dialog/0.0.1366.738@0.0.1366.738" timestamp="1605436177993" />
-    <state x="0" y="0" width="849" height="595" key="NewModule_or_Project.wizard" timestamp="1598082122896">
+    <state x="263" y="102" key="IDE.errors.dialog/0.0.1366.738@0.0.1366.738" timestamp="1607263960684" />
+    <state x="287" y="0" key="SettingsEditor" timestamp="1607258266069">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="0" y="0" width="849" height="595" key="NewModule_or_Project.wizard/0.0.1366.738@0.0.1366.738" timestamp="1598082122896" />
-    <state x="368" y="0" key="SettingsEditor" timestamp="1605884288910">
+    <state x="287" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1607258266069" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1606663244314">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="368" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1605884288910" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1606141240573">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1606141240573" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1606663244314" />
     <state width="471" height="736" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1605013581706">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="471" height="736" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1366.738@0.0.1366.738" timestamp="1605013581706" />
-    <state x="375" y="195" key="com.intellij.ide.util.TipDialog" timestamp="1598080626775">
+    <state x="487" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606307427311">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="375" y="195" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1598080626775" />
-    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605794289698">
+    <state x="487" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1606307427311" />
+    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1607267871922">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605794289698" />
+    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1607267871922" />
   </component>
   <component name="masterDetails">
     <states>

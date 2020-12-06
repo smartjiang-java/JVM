@@ -19,7 +19,6 @@ public class T15_FullGC_Problem01 {
         String name = "张三";
         int age = 5;
         Date birthdate = new Date();
-
         public void m() {
 
         }
@@ -30,7 +29,6 @@ public class T15_FullGC_Problem01 {
 
     public static void main(String[] args) throws Exception {
         executor.setMaximumPoolSize(50);
-
         for (;;){
             modelFit();
             Thread.sleep(100);
@@ -44,19 +42,16 @@ public class T15_FullGC_Problem01 {
             executor.scheduleWithFixedDelay(() -> {
                 //do sth with info
                 info.m();
-
             }, 2, 3, TimeUnit.SECONDS);
         });
     }
 
     private static List<CardInfo> getAllCardInfo(){
         List<CardInfo> taskList = new ArrayList<>();
-
         for (int i = 0; i < 100; i++) {
             CardInfo ci = new CardInfo();
             taskList.add(ci);
         }
-
         return taskList;
     }
 }

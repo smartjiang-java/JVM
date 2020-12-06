@@ -21,7 +21,7 @@
 1. 引用计数（ReferenceCount） 为0时进行回收
     缺点：不能解决循环引用的问题（ABC互相引用，但这个整体却没有引用指向，合起来一堆垃圾，却无法回收）
 2. 根可达算法(RootSearching)
-      --什么是根对象(GC roots)？ 
+    --什么是根对象(GC roots)(重点)？ 
     JVM stack(main方法栈帧里new的对象) 
     Native Method stack(main方法里用到的本地方法栈)
     Runtime constant pool(把class加载进去的运行时常量池)
@@ -31,7 +31,7 @@
 #### 3.常见的垃圾回收算法（背过）
 
 1. 标记清除(mark sweep) - 位置不连续 产生碎片 效率偏低（两遍扫描):存活对象比较高的情况下效率比较高,算法相对比较简单
-                        第一遍扫描是找到那些是有用的,进行标记,第二遍扫描是清除垃圾
+                          第一遍扫描是找到那些是有用的,进行标记,第二遍扫描是清除垃圾
 2. 拷贝算法 (copying) - 没有碎片，浪费空间,只能用一半,移动复制对象,需要调整对象引用,扫描一次,适用于存活对象较少的情况适合edon区
 3. 标记压缩(mark compact) 标记整理- 没有碎片，效率偏低（两遍扫描，指针需要调整）,需要移动对象
 
@@ -111,27 +111,35 @@
            space blocks in the tenured generation, then theapplication is paused and the collection is 
            completed with all the applicationthreads stopped
       解决方案：降低触发CMS的阈值,保持老年代有足够的空间
-      –XX:CMSInitiatingOccupancyFraction 92% 可以降低这个值，让CMS保持老年代足够的空间
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       >
+      –XX:CMSInitiatingOccupancyFraction 92% 可以降低这个值，让CMS保持老年代足够的空间                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     >
  从线程角度可以将CMS的GC过程分成以下几个过程:
- 初始标记:找到根对象,并标记,STW,时间很短,根可达算法
+ init mark初始标记:找到根对象,并标记,STW,时间很短,根可达算法
  预标记
- 并发标记:百分之八十GC的时间都浪费都这里,和应用程序一起运行,多数垃圾在此标记, 算法：三色标记 + Incremental Update
- 重新标记:STW,将应用程序暂停,将新产生的垃圾进行标记,由于新产生的垃圾并不多,所以时间也很多
- 并发清理:此过程也会产生垃圾,成为浮动垃圾,等待下一次CMS运行过程进行清理
+ concurrent mark 并发标记:百分之八十GC的时间都浪费都这里,和应用程序一起运行,多数垃圾在此标记,在此过程,也有可能垃圾变成
+                         不是垃圾, 算法：三色标记 + Incremental Update                        
+ remark 重新标记:STW,将应用程序暂停,将新产生的垃圾进行标记(将修改的或者增加的进行重新标记)时间也很短
+ concurrent sweep 并发清理:此过程也会产生垃圾,成为浮等待下一次CMS运行过程进行清理
  整理
- 
+ 动垃圾,
    想象一下： 
    PS + PO -> 加内存 换垃圾回收器 -> PN + CMS + SerialOld（几个小时 - 几天的STW）
    几十个G的内存，单线程回收 -> G1 + FGC 几十个G -> 上T内存的服务器 ZGC
 4. 内存上百G
-   G1(10ms)
+   G1(10ms):逻辑上分代,物理上不分代  把内存分成很多小块(region),从2^0 到 2^5M大小
+            逻辑上分代:old区     Survivor    eden   Hunongous(大对象区,可能会跨越几个连续的region)
+            内存区域并不固定,没有什么固定的eden区和old区
+            暂停时间短(200ms),还能保持较高的吞吐量(比ps降低10%),能够控制和预测GC暂停的时间
+     基本概念:
+      card table:YGC时方便寻找活着的对象,防止遍历old区(太大了,主要是为了优化),把对象分成一个一个的card,如果老年代的card里面
+                 的对象指回到了年轻代,就把这个card标记为dirty,有一个位图(BitMap)来表示哪一个card是dirty,
+                 card tible是一张总表,记录着那个card是dirty
+                       
    算法：三色标记 + SATB
-5. 内存4T - 16T（JDK13）
+5. 内存4T - 16T（JDK13）;  不分代   ,这个分块更加的人性化,内存块有大的有小的,不是同样大小的了 
    ZGC (1ms) PK C++   ，ZGC现在只支持linux
    算法：ColoredPointers(颜色指针) + LoadBarrier
 6. Shenandoah
-    算法：ColoredPointers + WriteBarrier
+    算法：ColoredPointers(颜色指针) + WriteBarrier
 7. Epliso-0n
 8. PS 和 PN区别的延伸阅读：
    ▪[https://docs.oracle.com/en/java/javase/13/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73](https://docs.oracle.com/en/java/javase/13/gctuning/ergonomics.html)
