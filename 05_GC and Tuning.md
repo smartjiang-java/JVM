@@ -115,12 +115,10 @@
  从线程角度可以将CMS的GC过程分成以下几个过程:
  init mark初始标记:找到根对象,并标记,STW,时间很短,根可达算法
  预标记
- concurrent mark 并发标记:百分之八十GC的时间都浪费都这里,和应用程序一起运行,多数垃圾在此标记,在此过程,也有可能垃圾变成
-                         不是垃圾, 算法：三色标记 + Incremental Update                        
+ concurrent mark 并发标记:百分之八十GC的时间都浪费都这里,和应用程序一起运行,多数垃圾在此标记,在此过程,也有可能垃圾变成不是垃圾,    
  remark 重新标记:STW,将应用程序暂停,将新产生的垃圾进行标记(将修改的或者增加的进行重新标记)时间也很短
+   并发标记算法：三色标记 + Incremental Update
  concurrent sweep 并发清理:此过程也会产生垃圾,成为浮等待下一次CMS运行过程进行清理
- 整理
- 动垃圾,
    想象一下： 
    PS + PO -> 加内存 换垃圾回收器 -> PN + CMS + SerialOld（几个小时 - 几天的STW）
    几十个G的内存，单线程回收 -> G1 + FGC 几十个G -> 上T内存的服务器 ZGC
@@ -133,8 +131,33 @@
       card table:YGC时方便寻找活着的对象,防止遍历old区(太大了,主要是为了优化),把对象分成一个一个的card,如果老年代的card里面
                  的对象指回到了年轻代,就把这个card标记为dirty,有一个位图(BitMap)来表示哪一个card是dirty,
                  card tible是一张总表,记录着那个card是dirty
-                       
-   算法：三色标记 + SATB
+      CSet: Collection Set,一组可被回收的分区的集合(标记为dirty的card的集合),在CSet中存活的对象会在GC过程中被移动到
+            另一个可用分区,CSet的分区可以凯子Eden空间,surivior空间,或者老年代,CSet会占用不到整个堆空间的1%大小
+      RSet:每一个region里面都有一个HashSet,记录了其他Region中的对象到本Region的引用
+            使得垃圾回收期不需要扫描整个堆找到谁引用了当前分区中的对象,只需要扫描RSet即可.
+            由于RSet的存在,每次给对象赋引用的时候,就得做一些额外的操作(比如记录,在GC中被称为写屏障,不是内存屏障)
+            No Sliver Bullet:在特定的情况下使用特定的解决情况,没有通用的解决方案
+      G1的新老年代的比例是动态的,一般不用手动指定,因为这个G1预测停顿时间的基准   
+   MixedGC:相当于一套完整的CMS：年轻代老年代一起回收
+   初始标记 STW
+   并发标记
+   最终标记(重新标记)
+   筛选回收 STW(并行):筛选哪些最需要回收的,将region复制压缩到另一块region,减少碎片
+   并发标记算法：三色标记 + SATB  
+   白色：未被标记的对象
+   灰色：自身被标记，成员变量未被标记
+   黑色：自身和成员变量均已标记完成
+   漏标:黑色对象指向白色,与此同时,指向这个白色的其他引用没了,这个白色的不是垃圾,但是会被当作垃圾,产生漏标
+   解决方法:打破上述两个条件之一即可
+   1:incremental update --增量更新,关注引用的增加   
+     把黑色重新标记为灰色,下次重新扫描属性
+   2:STAB snapshot at the beginning -关注引用的删除
+     当B->D消失时,要把这个引用推到GC的堆栈,保证D还能被GC扫描到,GC里面的这个堆栈存放的都是灰色对象指向白色对象的引用
+   为什么G1使用STAB?
+   因为G1里面是一个一个的region,有RSet,为了避免重新扫描
+   
+
+   
 5. 内存4T - 16T（JDK13）;  不分代   ,这个分块更加的人性化,内存块有大的有小的,不是同样大小的了 
    ZGC (1ms) PK C++   ，ZGC现在只支持linux
    算法：ColoredPointers(颜色指针) + LoadBarrier
@@ -148,6 +171,9 @@ Serial+Serial Old
 CMS+ParNew 
 1.8默认的垃圾回收：Parallel Scavenge + Parallel Old(不去指定其他的,默认就是这个)
 1.9默认G1
+
+阿里的多租户JVM
+session based GC(专门针对web Application) :一个session结束,直接回收对象
 
 ### 常见垃圾回收器组合参数设定：(1.8)
 * -XX:+UseSerialGC = Serial New (DefNew) + Serial Old
@@ -729,7 +755,10 @@ JDK动态代理产生的类信息，不会放到永久代中，而是放在堆�
 ### GC常用参数
 
 * -Xmn -Xms -Xmx -Xss
-  年轻代 最小堆 最大堆 栈空间
+  年轻代 最小堆 最大堆 栈空间  
+  注意:为什么一般将Xms和Xmx初始设置为一样大小的?
+  为了避免在生产环境由于heap内存扩大或缩小导致应用停顿，降低延迟，同时避免每次垃圾回收完成后JVM重新分配内存
+  避免频繁扩容和GC释放堆内存造成的系统开销/压力
 * -XX:+UseTLAB
   使用TLAB，默认打开
 * -XX:+PrintTLAB
@@ -819,10 +848,10 @@ JDK动态代理产生的类信息，不会放到永久代中，而是放在堆�
    A: 对象升入老年代的年龄
      	B: 老年代触发FGC时的内存垃圾比例
 
-2. 生产环境中，倾向于将最大堆内存和最小堆内存设置为：（为什么？）
+2. 生产环境中，倾向于将最大堆内存和最小堆内存设置为：相同（为什么？）
    A: 相同 B：不同
 
-3. JDK1.8默认的垃圾回收器是：
+3. JDK1.8默认的垃圾回收器是： C
    A: ParNew + CMS
      	B: G1
      	C: PS + ParallelOld
@@ -851,21 +880,17 @@ JDK动态代理产生的类信息，不会放到永久代中，而是放在堆�
 14. 如果采用PS + ParrallelOld组合，怎么做才能让系统基本不产生FGC
 
 15. 如果采用ParNew + CMS组合，怎样做才能够让系统基本不产生FGC
-
      1.加大JVM内存
-
      2.加大Young的比例
-
      3.提高Y-O的年龄
-
      4.提高S区比例
-
      5.避免代码内存泄漏
 
-16. G1是否分代？G1垃圾回收器会产生FGC吗？
+16. G1是否分代？G1垃圾回收器会产生FGC吗？(对象分配不下的时候发生FGC)
+   java 10以前是串行FullGC,序列化的,10以后是并行FGC
+    G1的目标是尽量不要产生FGC
 
 17. 如果G1产生FGC，你应该做什么？
-
       1. 扩内存
       2. 提高CPU性能（回收的快，业务逻辑产生对象的速度固定，垃圾回收越快，内存空间越大）
       3. 降低MixedGC触发的阈值，让MixedGC提早发生（默认是45%）
@@ -875,9 +900,7 @@ JDK动态代理产生的类信息，不会放到永久代中，而是放在堆�
 
  19. 问：常见的OOM问题有哪些？
      栈 堆 MethodArea 直接内存
-
-
-
+     
 ### 参考资料
 
 1. [https://blogs.oracle.com/](https://blogs.oracle.com/jonthecollector/our-collectors)[jonthecollector](https://blogs.oracle.com/jonthecollector/our-collectors)[/our-collectors](https://blogs.oracle.com/jonthecollector/our-collectors)
