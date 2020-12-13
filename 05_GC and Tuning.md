@@ -555,9 +555,11 @@ jhat -J-mx512M xxx.dump
 
 执行命令：java -Xms20M -Xmx20M -XX:+PrintGCDetails -XX:+UseConcMarkSweepGC com.mashibing.jvm.gc.T15_FullGC_Problem01
 
-[GC (Allocation Failure) [ParNew: 6144K->640K(6144K), 0.0265885 secs] 6585K->2770K(19840K), 0.0268035 secs] [Times: user=0.02 sys=0.00, real=0.02 secs] 
+[GC (Allocation Failure) [ParNew: 6144K->640K(6144K), 0.0265885 secs] 6585K->2770K(19840K), 0.0268035 secs] [Times: user=0.02 sys=0.00, real=0.02 secs]
 
-> ParNew：年轻代收集器
+年轻代回收1前使用大小  回收后年轻代使用大小   年轻代总空间     回收前堆使用大小   回收后堆空间使用大小   堆的总大小
+
+> ParNew：年轻代收集器 
 >
 > 6144->640：收集前后的对比
 >
@@ -584,7 +586,7 @@ jhat -J-mx512M xxx.dump
 	//class unloading: 卸载用不到的class
 	//scrub symbol(string) table: 
 		//cleaning up symbol and string tables which hold class-level metadata and 
-		//internalized string respectively
+		//internalized string respectively ：清除用不到的class对应常量池的引用
 	//CMS-remark: 8511K(13696K): 阶段过后的老年代占用及容量
 	//10108K(19840K): 阶段过后的堆占用及容量
 
@@ -605,9 +607,9 @@ jhat -J-mx512M xxx.dump
 #### G1日志详解
 
 ```java
-[GC pause (G1 Evacuation Pause) (young) (initial-mark), 0.0015790 secs]
-//young -> 年轻代 Evacuation-> 复制存活对象 
-//initial-mark 混合回收的阶段，这里是YGC混合老年代回收
+[GC pause (G1 Evacuation Pause) (young) (initial-mark), 0.0015790 secs]   pause暂停:STW的
+//young -> 年轻代 Evacuation-> 复制存活对象到另一个region里 
+//initial-mark mixGC混合回收的阶段，这里是YGC混合老年代回收的开始,YGC伴随着MixGC
    [Parallel Time: 1.5 ms, GC Workers: 1] //一个GC线程
       [GC Worker Start (ms):  92635.7]
       [Ext Root Scanning (ms):  1.1]
@@ -638,7 +640,7 @@ jhat -J-mx512M xxx.dump
 [GC concurrent-root-region-scan-start]
 [GC concurrent-root-region-scan-end, 0.0000078 secs]
 [GC concurrent-mark-start]
-//无法evacuation，进行FGC
+//无法evacuation，没有region进行复制了,进行FGC,就需要排查代码问题了,G1的调优目标是没有FGC
 [Full GC (Allocation Failure)  18M->18M(20M), 0.0719656 secs]
    [Eden: 0.0B(1024.0K)->0.0B(1024.0K) Survivors: 0.0B->0.0B Heap: 18.8M(20.0M)->18.8M(20.0M)], [Metaspace: 38
 76K->3876K(1056768K)] [Times: user=0.07 sys=0.00, real=0.07 secs]
@@ -760,13 +762,13 @@ JDK动态代理产生的类信息，不会放到永久代中，而是放在堆�
   为了避免在生产环境由于heap内存扩大或缩小导致应用停顿，降低延迟，同时避免每次垃圾回收完成后JVM重新分配内存
   避免频繁扩容和GC释放堆内存造成的系统开销/压力
 * -XX:+UseTLAB
-  使用TLAB，默认打开
+  使用TLAB，默认打开,一般不需要手动设置
 * -XX:+PrintTLAB
-  打印TLAB的使用情况
+  打印TLAB的使用情况,一般不需要手动设置
 * -XX:TLABSize
-  设置TLAB大小
+  设置TLAB大小,一般不需要手动设置
 * -XX:+DisableExplictGC
-  System.gc()不管用 ，FGC
+  System.gc()不管用 ，FGC,这个一般会打开
 * -XX:+PrintGC
 * -XX:+PrintGCDetails
 * -XX:+PrintHeapAtGC
@@ -779,40 +781,37 @@ JDK动态代理产生的类信息，不会放到永久代中，而是放在堆�
   记录回收了多少种不同引用类型的引用
 * -verbose:class
   类加载详细过程
-* -XX:+PrintVMOptions
-* -XX:+PrintFlagsFinal  -XX:+PrintFlagsInitial
-  必须会用
+* -XX:+PrintVMOptions :打印JVM运行参数
+* -XX:+PrintFlagsFinal  -XX:+PrintFlagsInitial     必须会用
 * -Xloggc:opt/log/gc.log
-* -XX:MaxTenuringThreshold
-  升代年龄，最大值15
+* -XX:MaxTenuringThreshold :  升代年龄，最大值15
 * 锁自旋次数 -XX:PreBlockSpin 热点代码检测参数-XX:CompileThreshold 逃逸分析 标量替换 ... 
   这些不建议设置
 
 ### Parallel常用参数
 
-* -XX:SurvivorRatio
+* -XX:SurvivorRatio :年轻代比例,默认是8:1:1,可调,一般不动
 * -XX:PreTenureSizeThreshold
-  大对象到底多大
-* -XX:MaxTenuringThreshold
+  大对象到底多大,直接进入老年代
+* -XX:MaxTenuringThreshold: 升代年龄，最大值15
 * -XX:+ParallelGCThreads
-  并行收集器的线程数，同样适用于CMS，一般设为和CPU核数相同
-* -XX:+UseAdaptiveSizePolicy
+  并行收集器的线程数，同样适用于CMS，一般设为和CPU核数相同,一般不设置
+* -XX:+UseAdaptiveSizePolicy(低)
   自动选择各区大小比例
 
 ### CMS常用参数
 
 * -XX:+UseConcMarkSweepGC
-* -XX:ParallelCMSThreads
-  CMS线程数量
+* -XX:ParallelCMSThreads :CMS线程数量(默认是核的一半)
 * -XX:CMSInitiatingOccupancyFraction
   使用多少比例的老年代后开始CMS收集，默认是68%(近似值)，如果频繁发生SerialOld卡顿，应该调小，（频繁CMS回收）
 * -XX:+UseCMSCompactAtFullCollection
   在FGC时进行压缩
 * -XX:CMSFullGCsBeforeCompaction
   多少次FGC之后进行压缩
-* -XX:+CMSClassUnloadingEnabled
+* -XX:+CMSClassUnloadingEnabled :回收方法区
 * -XX:CMSInitiatingPermOccupancyFraction
-  达到什么比例时进行Perm回收
+  达到什么比例时进行Perm回收,永久代存放的是一些class信息,1.8之前
 * GCTimeRatio
   设置GC时间占用程序运行时间的百分比
 * -XX:MaxGCPauseMillis
@@ -820,7 +819,7 @@ JDK动态代理产生的类信息，不会放到永久代中，而是放在堆�
 
 ### G1常用参数
 
-* -XX:+UseG1GC
+* -XX:+UseG1GC :使用G1
 * -XX:MaxGCPauseMillis
   建议值，G1会尝试调整Young区的块数来达到这个值
 * -XX:GCPauseIntervalMillis
