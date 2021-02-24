@@ -27,6 +27,9 @@ java -XX:+PrintCommandLineFlags -version
    1. 引用类型：-XX:+UseCompressedOops 为4字节 不开启为8字节 
       Oops Ordinary Object Pointers
    2:成员变量,8大基本类型变量
+ 注意：在这一步，有 alignment/padding gap,重排序，判断实例数据的长度必须是4的倍数，不是的话，会在最后做填充.
+      一般做法是：如果成员变量中有两个大于四字节的，那么其中一个加上剩下的成员变量的和不是4的倍数的话，才会发生间隙填充
+      ![binaryTree](tmp/image/padding%20gap.png)   
 4. Padding对齐，8的倍数
         填充部分仅起到占位符的作用, 不是必然存在的，原因是HotSpot要求对象起始地址必须是8字节的整数倍。 
         假如不是，就采用对齐填充的方式将其补齐8字节整数倍，原因是64位机器能被8整除的效率是最高的
@@ -43,8 +46,8 @@ java -XX:+PrintCommandLineFlags -version
 4. 数组数据
 5. 对齐 8的倍数
 
-object对象16字节,8字节脑袋,本来point8字节,但是JVM默认开启指针压缩,变成4字节,4字节对齐,16字节
-数组对象16字节,8字节脑袋,4字节指针,4字节数组长度
+object对象16字节,8字节脑袋,本来point8字节,但是JVM默认开启指针压缩,变成4字节,此时是12字节，然后padding8字节对齐,16字节
+数组对象16字节,8字节脑袋,4字节指针,4字节数组长度,没有padding了
 
 
 ## 实验

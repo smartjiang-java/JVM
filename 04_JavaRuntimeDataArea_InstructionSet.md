@@ -71,11 +71,10 @@ invokespecial:执行特殊的方法,一般是init,构造方法,private 方法---
 invokevirtual:调用方法,执行另一个栈帧,另一个栈帧执行结束,有返回值,会在栈顶放入这个值
 invokeStatic:调用静态方法
 invokeInterface:new对象时上转型,通过接口去调用方法
-InvokeDynamic:JVM最难的指令,1.7之后java支持动态语言后加入
-       lambda表达式或者反射或者其他动态语言scala kotlin，或者CGLib ASM，动态产生的class，会用到的指令
-iconst_1  :把1这个立即数压栈
+InvokeDynamic:JVM最难的指令,1.7之后java支持动态语言后加入lambda表达式或者反射或者其他动态语言scala kotlin，或者CGLib ASM，动态产生的class，会用到的指令
+iconst_1 :把1这个立即数压栈
 imul:相乘
 clinit:类在初始化阶段调用的方法,将static变量赋定义值
 init::类构造方法
-sub
+sub:减法
 
