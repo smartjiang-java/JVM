@@ -28,11 +28,21 @@ java -XX:+PrintCommandLineFlags -version
       Oops Ordinary Object Pointers
    2:成员变量,8大基本类型变量
  注意：在这一步，有 alignment/padding gap,重排序，判断实例数据的长度必须是4的倍数，不是的话，会在最后做填充.
-      一般做法是：
+      HotSpot源码中FieldsAllocationStyle参数控制对齐填充的分配策略。
+取值为0时，引用在原始类型前面, 然后依次是longs/doubles、ints、shorts/chars、bytes/booleans；即基本类型->填充字段(可以没有)->引用类型
+取值为1时，引用在原始类型后面，即longs/doubles、ints、shorts/chars、bytes/booleans 然后是引用类型；即引用类型->基本类型->填充字段(可以没有)
+取值为2时，父类中的引用类型与子类中的引用类型放在一起，此时父类采用策略0，子类采用策略1。
+取值0和取值1都是将基本数据类型按照从大到小的方式排序，这样可以降低空间开销。而取值3 将父类和子类的引用放在一起，这样可以增加 GC 效率，
+试想在GC 扫描引用时，由于父类和子类的引用连续，可能只需要扫描一个内存行即可，若父类和子类的引用不连续，则需要扫描多个内存行；
+另外连续的内存引用还可减少 OopMap 的个数，从而达到提高 GC 效率的目的。
+      一般做法是，默认0策略：
       如果成员变量中有一个四字节的基本类型和最少一个引用类型，那么基本类型加上剩下的成员变量的和不是4的倍数的话，才会发生间隙填充;
       全部都是基本类型是不会发生间隙填充的。
-      八大基本类型：boolean(1),byte(1),short(2),char(2),int(4),long(8),float(4),double(8)
-      ![binaryTree](tmp/image/padding%20gap.png)   
+      ![binaryTree](tmp/image/padding%20gap.png)
+      会发现：排序却是按照age(int)、height(long)、man(boolean), 然后是引用类型；基本类型的排序不符合
+      longs/doubles、ints、shorts/chars、bytes/booleans的规则啊。原因很简单，因为对象头占了12字节，还记得我们刚刚说的8字节对齐吗，
+      这里正好可以插入一个4字节的数据，如果long类型排在前面的话，这4字节是不是就浪费了呢，
+      所以JVM就帮我们把age(int)放到了long类型之前(可以通过-XX:+/-CompactFields进行控制，默认开启)；    
 4. Padding对齐，8的倍数
         填充部分仅起到占位符的作用, 不是必然存在的，原因是HotSpot要求对象起始地址必须是8字节的整数倍。 
         假如不是，就采用对齐填充的方式将其补齐8字节整数倍，原因是64位机器能被8整除的效率是最高的

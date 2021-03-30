@@ -1,20 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="96329429-90d8-4757-a4a3-7fdc61dce21a" name="Default Changelist" comment="">
+    <list default="true" id="96329429-90d8-4757-a4a3-7fdc61dce21a" name="Default Changelist" comment="啦啦">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjdk_jol_jol_core_0_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/image/padding gap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ObjectSize.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_GC and Tuning.md" beforeDir="false" afterPath="$PROJECT_DIR$/05_GC and Tuning.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T15_FullGC_Problem01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T15_FullGC_Problem01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_02_JavaAgent_AboutObject.md" beforeDir="false" afterPath="$PROJECT_DIR$/03_02_JavaAgent_AboutObject.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JVM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JVM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/ConstantPoolOOM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/ExeModeCompVSMixed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/HeapOOM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/Hello.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/StackOverFlow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/TestGC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c0_basic/T.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c0_basic/TestIndentityHashCode$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c0_basic/TestIndentityHashCode$T.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c0_basic/TestIndentityHashCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0100_ByteCode01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0101_ByteCode_With_Interfaces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0102_ByteCode02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0103_ByteCode03.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0104_ByteCode04.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0104_ByteCode05.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T003_ClassLoaderScope.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T004_ParentAndChild.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T005_LoadClassByHand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$P.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$X.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T009_WayToRun.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent$MyLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T012_ClassReloading2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T012_ClassReloading2$MyLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T012_ClassReloading2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T02_PrintMemoryInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject$P.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestHeapDump.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestSync.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestVolatile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/cms/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/cms/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/ConstantPoolOOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/ConstantPoolOOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/ExeModeCompVSMixed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/ExeModeCompVSMixed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/HeapOOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/HeapOOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/Hello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/StackOverFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/StackOverFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/TestGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/TestGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c0_basic/T.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c0_basic/T.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c0_basic/TT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c0_basic/TT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c0_basic/TestIndentityHashCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c0_basic/TestIndentityHashCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0100_ByteCode01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0100_ByteCode01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0101_ByteCode_With_Interfaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0101_ByteCode_With_Interfaces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0102_ByteCode02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0102_ByteCode02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0103_ByteCode03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0103_ByteCode03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0104_ByteCode04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0104_ByteCode04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0104_ByteCode05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0104_ByteCode05.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T003_ClassLoaderScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T003_ClassLoaderScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T004_ParentAndChild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T004_ParentAndChild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T005_LoadClassByHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T005_LoadClassByHand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T008_LazyLoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T008_LazyLoading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T009_WayToRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T009_WayToRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T010_Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T010_Parent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T012_ClassReloading2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T012_ClassReloading2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T02_PrintMemoryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/T02_PrintMemoryInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T04_Disorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/T04_Disorder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestHeapDump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/TestHeapDump.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/TestSync.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestVolatile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/TestVolatile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T01_InvokeStatic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T01_InvokeStatic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T02_InvokeVirtual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T02_InvokeVirtual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T03_InvokeSpecial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T03_InvokeSpecial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T04_InvokeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T04_InvokeInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T05_InvokeDynamic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T05_InvokeDynamic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/TestIPulsPlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/TestIPulsPlus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/LambdaGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/LambdaGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T01_HelloGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T01_HelloGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T02_CMS_Eden.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T02_CMS_Eden.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T03_CMS_Old.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T03_CMS_Old.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T04_CMS_YGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T04_CMS_YGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T15_FullGC_Problem01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T15_FullGC_Problem01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/TestTLAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/TestTLAB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/cms/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/cms/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/cms/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/cms/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/interview/aboutobject/T01_ProcudureOfObjectCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/interview/aboutobject/T01_ProcudureOfObjectCreation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints>
-      <file url="file://$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T010_Parent.java" />
-    </disable_hints>
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -29,8 +133,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T010_Parent.java" root0="FORCE_HIGHLIGHTING" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Mysofts\IDEA\maven\maven_repository" />
+        <option name="mavenHome" value="D:\Mysofts\IDEA\maven\apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\Mysofts\IDEA\maven\settings_aliyun.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1fDKwYNp5kcZLqx6t3ACXGaB2kK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -50,12 +168,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tmp/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JUC" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -182,6 +303,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -227,6 +351,14 @@
       <workItem from="1606741535119" duration="617000" />
       <workItem from="1607257232100" duration="699000" />
       <workItem from="1607258055000" duration="6314000" />
+      <workItem from="1614131499284" duration="98000" />
+      <workItem from="1614141057238" duration="911000" />
+      <workItem from="1614216416448" duration="10000" />
+      <workItem from="1614216566555" duration="15000" />
+      <workItem from="1614216862585" duration="946000" />
+      <workItem from="1615197834136" duration="653000" />
+      <workItem from="1616743036009" duration="296000" />
+      <workItem from="1617094668994" duration="158000" />
     </task>
     <task id="LOCAL-00001" summary="更新markdown资料与图片">
       <created>1572139204079</created>
@@ -340,11 +472,44 @@
       <option name="project" value="LOCAL" />
       <updated>1606663237694</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="啦啦">
+      <created>1614130949703</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1614130949703</updated>
+    </task>
+    <task id="LOCAL-00018" summary="啦啦">
+      <created>1614131575932</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1614131575932</updated>
+    </task>
+    <task id="LOCAL-00019" summary="啦啦">
+      <created>1614141940713</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1614141940713</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更新markdown资料与图片" />
@@ -357,61 +522,8 @@
     <MESSAGE value="add" />
     <MESSAGE value="gc learn" />
     <MESSAGE value="learn GC日志" />
-    <option name="LAST_COMMIT_MESSAGE" value="learn GC日志" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="137" y="22" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606312369378">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="137" y="22" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1606312369378" />
-    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1606663233897">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1606663233897" />
-    <state x="463" y="126" key="FileChooserDialogImpl" timestamp="1599749201585">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1599749201585" />
-    <state width="1322" height="176" key="GridCell.Tab.0.bottom" timestamp="1606310367660">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1322" height="176" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1606310367660" />
-    <state width="1322" height="176" key="GridCell.Tab.0.center" timestamp="1606310367660">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1322" height="176" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1606310367660" />
-    <state width="1322" height="176" key="GridCell.Tab.0.left" timestamp="1606310367656">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1322" height="176" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1606310367656" />
-    <state width="1322" height="176" key="GridCell.Tab.0.right" timestamp="1606310367660">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1322" height="176" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1606310367660" />
-    <state x="263" y="102" key="IDE.errors.dialog" timestamp="1607263960684">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="263" y="102" key="IDE.errors.dialog/0.0.1366.738@0.0.1366.738" timestamp="1607263960684" />
-    <state x="287" y="0" key="SettingsEditor" timestamp="1607258266069">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="287" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1607258266069" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1606663244314">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1606663244314" />
-    <state width="471" height="736" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1605013581706">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="471" height="736" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1366.738@0.0.1366.738" timestamp="1605013581706" />
-    <state x="487" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606307427311">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="487" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1606307427311" />
-    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1607267871922">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="694" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1607267871922" />
+    <MESSAGE value="啦啦" />
+    <option name="LAST_COMMIT_MESSAGE" value="啦啦" />
   </component>
   <component name="masterDetails">
     <states>
