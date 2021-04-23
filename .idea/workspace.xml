@@ -5,115 +5,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96329429-90d8-4757-a4a3-7fdc61dce21a" name="Default Changelist" comment="啦啦">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjdk_jol_jol_core_0_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/image/padding gap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ObjectSize.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_78.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_7_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/jvm-image/JVM和JDK,JRE的关系.png.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/jvm-image/常见的JVM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/jvm-image/程序计数器.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_ClassFileFormat.md" beforeDir="false" afterPath="$PROJECT_DIR$/01_ClassFileFormat.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03_02_JavaAgent_AboutObject.md" beforeDir="false" afterPath="$PROJECT_DIR$/03_02_JavaAgent_AboutObject.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_JavaRuntimeDataArea_InstructionSet.md" beforeDir="false" afterPath="$PROJECT_DIR$/04_JavaRuntimeDataArea_InstructionSet.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_GC and Tuning.md" beforeDir="false" afterPath="$PROJECT_DIR$/05_GC and Tuning.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GCHeapDump.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/image/GCHeapDump.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GC日志详解.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/image/GC日志详解.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JVM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JVM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/ConstantPoolOOM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/ExeModeCompVSMixed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/HeapOOM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/Hello.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/StackOverFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/TestGC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c0_basic/T.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c0_basic/TestIndentityHashCode$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c0_basic/TestIndentityHashCode$T.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c0_basic/TestIndentityHashCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0100_ByteCode01.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0101_ByteCode_With_Interfaces.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0102_ByteCode02.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0103_ByteCode03.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0104_ByteCode04.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c1_bytecode/T0104_ByteCode05.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T003_ClassLoaderScope.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T004_ParentAndChild.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T005_LoadClassByHand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$P.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading$X.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T008_LazyLoading.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T009_WayToRun.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent$MyLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T010_Parent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T012_ClassReloading2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T012_ClassReloading2$MyLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c2_classloader/T012_ClassReloading2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T02_PrintMemoryInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject$P.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/T04_Disorder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestHeapDump.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestSync.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/c3_jmm/TestVolatile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/cms/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JVM/com/mashibing/jvm/cms/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/ConstantPoolOOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/ConstantPoolOOM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/ExeModeCompVSMixed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/ExeModeCompVSMixed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/HeapOOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/HeapOOM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/Hello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/StackOverFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/StackOverFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/TestGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/TestGC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c0_basic/T.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c0_basic/T.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c0_basic/TT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c0_basic/TT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c0_basic/TestIndentityHashCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c0_basic/TestIndentityHashCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0100_ByteCode01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0100_ByteCode01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0101_ByteCode_With_Interfaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0101_ByteCode_With_Interfaces.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0102_ByteCode02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0102_ByteCode02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0103_ByteCode03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0103_ByteCode03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0104_ByteCode04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0104_ByteCode04.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c1_bytecode/T0104_ByteCode05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0104_ByteCode05.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T003_ClassLoaderScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T003_ClassLoaderScope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T004_ParentAndChild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T004_ParentAndChild.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T005_LoadClassByHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T005_LoadClassByHand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T008_LazyLoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T008_LazyLoading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T009_WayToRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T009_WayToRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T010_Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T010_Parent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c2_classloader/T012_ClassReloading2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T012_ClassReloading2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T02_PrintMemoryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/T02_PrintMemoryInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/T04_Disorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/T04_Disorder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestHeapDump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/TestHeapDump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/TestSync.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c3_jmm/TestVolatile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/TestVolatile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_04.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T01_InvokeStatic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T01_InvokeStatic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T02_InvokeVirtual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T02_InvokeVirtual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T03_InvokeSpecial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T03_InvokeSpecial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T04_InvokeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T04_InvokeInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T05_InvokeDynamic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T05_InvokeDynamic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/TestIPulsPlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/TestIPulsPlus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/LambdaGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/LambdaGC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T01_HelloGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T01_HelloGC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T02_CMS_Eden.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T02_CMS_Eden.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T03_CMS_Old.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T03_CMS_Old.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T04_CMS_YGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T04_CMS_YGC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/T15_FullGC_Problem01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T15_FullGC_Problem01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/c5_gc/TestTLAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/TestTLAB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/cms/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/cms/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/cms/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/cms/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mashibing/jvm/interview/aboutobject/T01_ProcudureOfObjectCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/interview/aboutobject/T01_ProcudureOfObjectCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/ConstantPoolOOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/ConstantPoolOOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/ExeModeCompVSMixed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/ExeModeCompVSMixed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/HeapOOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/HeapOOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/Hello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/StackOverFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/StackOverFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/TestGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/TestGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c0_basic/T.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c0_basic/T.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c0_basic/TT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c0_basic/TT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c0_basic/TestIndentityHashCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c0_basic/TestIndentityHashCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0100_ByteCode01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c1_bytecode/T0100_ByteCode01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0101_ByteCode_With_Interfaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c1_bytecode/T0101_ByteCode_With_Interfaces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0102_ByteCode02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c1_bytecode/T0102_ByteCode02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0103_ByteCode03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c1_bytecode/T0103_ByteCode03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0104_ByteCode04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c1_bytecode/T0104_ByteCode04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c1_bytecode/T0104_ByteCode05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c1_bytecode/T0104_ByteCode05.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T001_ClassLoadingProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T001_ClassLoadingProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T002_ClassLoaderLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T002_ClassLoaderLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T003_ClassLoaderScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T003_ClassLoaderScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T004_ParentAndChild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T004_ParentAndChild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T005_LoadClassByHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T005_LoadClassByHand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T006_MSBClassLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T006_MSBClassLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T007_MSBClassLoaderWithEncription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T008_LazyLoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T008_LazyLoading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T009_WayToRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T009_WayToRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T010_Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T010_Parent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T011_ClassReloading1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T011_ClassReloading1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c2_classloader/T012_ClassReloading2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c2_classloader/T012_ClassReloading2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/T02_PrintMemoryInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c3_jmm/T02_PrintMemoryInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/T03_SizeOfAnObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c3_jmm/T03_SizeOfAnObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/T04_Disorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c3_jmm/T04_Disorder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/TestHeapDump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c3_jmm/TestHeapDump.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/TestSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c3_jmm/TestSync.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c3_jmm/TestVolatile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c3_jmm/TestVolatile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/Hello_04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T01_InvokeStatic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/T01_InvokeStatic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T02_InvokeVirtual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/T02_InvokeVirtual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T03_InvokeSpecial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/T03_InvokeSpecial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T04_InvokeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/T04_InvokeInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/T05_InvokeDynamic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/T05_InvokeDynamic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c4_RuntimeDataAreaAndInstructionSet/TestIPulsPlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/TestIPulsPlus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/LambdaGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c5_gc/LambdaGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T01_HelloGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c5_gc/T01_HelloGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T02_CMS_Eden.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c5_gc/T02_CMS_Eden.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T03_CMS_Old.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c5_gc/T03_CMS_Old.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T04_CMS_YGC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c5_gc/T04_CMS_YGC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/T15_FullGC_Problem01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c5_gc/T15_FullGC_Problem01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/c5_gc/TestTLAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/c5_gc/TestTLAB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/cms/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/cms/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/cms/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/cms/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mashibing/jvm/interview/aboutobject/T01_ProcudureOfObjectCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msb/jvm/interview/aboutobject/T01_ProcudureOfObjectCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/对象分配过程详解.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/image/对象分配过程详解.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/常用垃圾回收器.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/image/常用垃圾回收器.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +132,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JUC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tmp/jvm-image" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -179,7 +143,16 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Mysofts\programs\Idea programs\my\JVM\tmp\jvm-image" />
+      <recent name="E:\java资源全套\program\idea program\JVM\tmp\image" />
+      <recent name="C:\work\ijprojects\JVM" />
+      <recent name="C:\work\ijprojects\JVM\src\com\mashibing\jvm\cms" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Mysofts\programs\Idea programs\my\JVM\tmp\jvm-image" />
+      <recent name="D:\Mysofts\programs\Idea programs\my\JVM\tmp\image" />
+      <recent name="D:\Mysofts\programs\Idea programs\my\JVM\src\main\java" />
       <recent name="E:\java资源全套\program\idea program\JVM\tmp\image" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -189,11 +162,6 @@
       <recent name="com.mashibing.jvm.bytecode" />
       <recent name="com.mashibing.jvm.gc" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\java资源全套\program\idea program\JVM\tmp\image" />
-      <recent name="C:\work\ijprojects\JVM" />
-      <recent name="C:\work\ijprojects\JVM\src\com\mashibing\jvm\cms" />
-    </key>
   </component>
   <component name="RestServicesNavigator">
     <treeState>
@@ -201,26 +169,13 @@
       <select />
     </treeState>
   </component>
-  <component name="RunManager" selected="Application.T01_HelloGC">
-    <configuration name="T001_ClassLoadingProcedure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c2_classloader.T001_ClassLoadingProcedure" />
-      <module name="JVM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mashibing.jvm.c2_classloader.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.T01_InvokeStatic">
     <configuration name="T002_ClassLoaderLevel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c2_classloader.T002_ClassLoaderLevel" />
+      <option name="MAIN_CLASS_NAME" value="msb.jvm.c2_classloader.T002_ClassLoaderLevel" />
       <module name="JVM" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mashibing.jvm.c2_classloader.*" />
+          <option name="PATTERN" value="msb.jvm.c2_classloader.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -231,12 +186,25 @@
     <configuration name="T01_HelloGC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="E:\jdk8\jre" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c5_gc.T01_HelloGC" />
+      <option name="MAIN_CLASS_NAME" value="msb.jvm.c5_gc.T01_HelloGC" />
       <module name="JVM" />
       <shortenClasspath name="NONE" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mashibing.jvm.c5_gc.*" />
+          <option name="PATTERN" value="msb.jvm.c5_gc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="T01_InvokeStatic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="msb.jvm.c4_RuntimeDataAreaAndInstructionSet.T01_InvokeStatic" />
+      <module name="JVM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="msb.jvm.c4_RuntimeDataAreaAndInstructionSet.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -245,12 +213,12 @@
       </method>
     </configuration>
     <configuration name="T03_SizeOfAnObject" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c3_jmm.T03_SizeOfAnObject" />
+      <option name="MAIN_CLASS_NAME" value="msb.jvm.c3_jmm.T03_SizeOfAnObject" />
       <module name="JVM" />
       <option name="VM_PARAMETERS" value="-javaagent:C:\work\ijprojects\ObjectSize\out\artifacts\ObjectSize_jar\ObjectSize.jar -XX:-UseCompressedClassPointers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mashibing.jvm.c3_jmm.*" />
+          <option name="PATTERN" value="msb.jvm.c3_jmm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -259,11 +227,11 @@
       </method>
     </configuration>
     <configuration name="T04_Disorder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c3_jmm.T04_Disorder" />
+      <option name="MAIN_CLASS_NAME" value="msb.jvm.c3_jmm.T04_Disorder" />
       <module name="JVM" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mashibing.jvm.c3_jmm.*" />
+          <option name="PATTERN" value="msb.jvm.c3_jmm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -272,11 +240,11 @@
       </method>
     </configuration>
     <configuration name="TestSync" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mashibing.jvm.c3_jmm.TestSync" />
+      <option name="MAIN_CLASS_NAME" value="msb.jvm.c3_jmm.TestSync" />
       <module name="JVM" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mashibing.jvm.c3_jmm.*" />
+          <option name="PATTERN" value="msb.jvm.c3_jmm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -284,21 +252,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.T03_SizeOfAnObject" />
-      <item itemvalue="Application.T001_ClassLoadingProcedure" />
       <item itemvalue="Application.T002_ClassLoaderLevel" />
       <item itemvalue="Application.T01_HelloGC" />
       <item itemvalue="Application.T04_Disorder" />
       <item itemvalue="Application.TestSync" />
+      <item itemvalue="Application.T01_InvokeStatic" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.T01_InvokeStatic" />
         <item itemvalue="Application.TestSync" />
         <item itemvalue="Application.T04_Disorder" />
         <item itemvalue="Application.T01_HelloGC" />
         <item itemvalue="Application.T002_ClassLoaderLevel" />
-        <item itemvalue="Application.T001_ClassLoadingProcedure" />
       </list>
     </recent_temporary>
   </component>
@@ -358,7 +337,10 @@
       <workItem from="1614216862585" duration="946000" />
       <workItem from="1615197834136" duration="653000" />
       <workItem from="1616743036009" duration="296000" />
-      <workItem from="1617094668994" duration="158000" />
+      <workItem from="1617094668994" duration="365000" />
+      <workItem from="1618922073128" duration="553000" />
+      <workItem from="1618971444385" duration="15000" />
+      <workItem from="1619141419130" duration="10545000" />
     </task>
     <task id="LOCAL-00001" summary="更新markdown资料与图片">
       <created>1572139204079</created>
@@ -493,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614141940713</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="啦啦">
+      <created>1617095020699</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1617095020699</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,6 +513,22 @@
     <MESSAGE value="learn GC日志" />
     <MESSAGE value="啦啦" />
     <option name="LAST_COMMIT_MESSAGE" value="啦啦" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/msb/jvm/c4_RuntimeDataAreaAndInstructionSet/T01_InvokeStatic.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/JVM$T01_InvokeStatic.ic" NAME="T01_InvokeStatic Coverage Results" MODIFIED="1619182049777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>msb.jvm.c4_RuntimeDataAreaAndInstructionSet.*</FILTER>
+    </SUITE>
   </component>
   <component name="masterDetails">
     <states>

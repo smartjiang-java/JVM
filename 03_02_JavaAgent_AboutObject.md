@@ -69,7 +69,7 @@ object对象16字节,8字节脑袋,本来point8字节,但是JVM默认开启指�
 2. 创建文件ObjectSizeAgent
 
    ```java
-   package com.mashibing.jvm.agent;
+   package msb.jvm.agent;
    
    import java.lang.instrument.Instrumentation;
    
@@ -91,7 +91,7 @@ object对象16字节,8字节脑袋,本来point8字节,但是JVM默认开启指�
    ```java
    Manifest-Version: 1.0
    Created-By: mashibing.com
-   Premain-Class: com.mashibing.jvm.agent.ObjectSizeAgent
+   Premain-Class: msb.jvm.agent.ObjectSizeAgent
    ```
 
    注意Premain-Class这行必须是新的一行（回车 + 换行），确认idea不能有任何错误提示
@@ -110,9 +110,9 @@ object对象16字节,8字节脑袋,本来point8字节,但是JVM默认开启指�
 7. 如何使用该类：
 
    ```java
-      package com.mashibing.jvm.c3_jmm;
+      package msb.jvm.c3_jmm;
       
-      import com.mashibing.jvm.agent.ObjectSizeAgent;
+      import msb.jvm.agent.ObjectSizeAgent;
       
       public class T03_SizeOfAnObject {
           public static void main(String[] args) {

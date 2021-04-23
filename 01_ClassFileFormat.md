@@ -4,6 +4,7 @@
 
 1. 什么是JVM
     JVM：跨语言的平台。JVM与java无关，只认识字节码文件（.class），是一种规范
+   Java Virtual Machine:Java虚拟机，java程序的运行环境(二进制字节码的运行环境)
 2. 常见的JVM
    Hotspot(oracle官方)    J9(IBM)     Microsoft VM(微软)     
    TaobaoVM(淘宝，Hotspot定制版)    azul zing(商业版本收费，垃圾回收最快)
