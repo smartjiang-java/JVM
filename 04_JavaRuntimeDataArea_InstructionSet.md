@@ -45,7 +45,7 @@ Method Area(各种各样的class,常量池)
    字符串常量位于堆
    会触发FGC清理
    不设定的话，最大就是物理内存
-
+   
 Runtime Constant Pool:运行时数据区,扔在常量池
 
 Native Method Stack:本地方法栈,C和C++写的方法
@@ -66,7 +66,7 @@ istore_1:将栈顶的值pop出来,放到局部变量表的1号位置
 iload_1:将局部变量表1号位的值拿出来压栈
 iinc 1 by 1:把局部变量表1号位置值加1
 iadd 在栈里拿出两条int值相加,结果放在栈顶
-dup:复制一份,一般执行构造方法的时候会消耗一个
+dup:复制一份,一般执行构造方法的时候会消耗一个5
 invokespecial:执行特殊的方法,一般是init,构造方法,private 方法---可以直接定位，不需要多态的方法
 invokevirtual:调用方法,执行另一个栈帧,另一个栈帧执行结束,有返回值,会在栈顶放入这个值
 invokeStatic:调用静态方法
@@ -77,4 +77,19 @@ imul:相乘
 clinit:类在初始化阶段调用的方法,将static变量赋定义值
 init::类构造方法
 sub:减法
+getstatic :获取一个静态变量
+ldc:加载一个引用地址,将一个符号引用变成字符串对象
+astore_1    把new出来的引用放进1号串池中
+aload_1     从1号串池中取出,放在栈顶
+checkcast  用来检验向下转型
+ACC_SUPER   :支持父类调用
+
+
+
+虚拟机栈 可以通过参数-Xss控制，windows系统受虚拟内存影响，其他系统默认1MB。
+heap:线程共享, -Xmx 参数控制堆空间最大值
+-XX:MaxMetaspaceSize=8m  设置元空间大小默认使用直接内存,没有上限
+
+-XX:StringTableSize=xxxx  设置StringTable的桶的个数
+-XX:+DisableExplicitGC  禁用显示的垃圾回收,让代码中的 System.gc()回收
 
